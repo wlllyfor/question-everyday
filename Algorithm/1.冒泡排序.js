@@ -20,4 +20,24 @@ const arr = [5,4,3,2,1]
 console.log(bubbleSort(arr))
 
 
-
+/**
+ * 稍微优化一下
+ * 如果数组本来就是有序的，就不用遍历第二次了。
+ * 如果第一次循环时没有交换，说明数组本来就是有序的，就直接返回数组。
+ */
+function bubbleSort1 (arr) {
+  for (let i = 0; i< arr.length; i++) {
+    
+    let isSorted = true // 定义一个判断数组是否有序的布尔值变量
+    for (let j = 0; j < arr.length - i; j++ ) {
+      if (arr[j] > arr[j + 1]) {
+        [arr[j], arr[j + 1]] = [arr[j + 1], arr[j]]
+        isSorted = false // 如果交换过，说明不是有序的
+      }
+    }
+    if (isSorted) { // 如果是有序的，直接返回数组
+      return arr
+    }
+  }
+  return arr
+}
