@@ -1,0 +1,34 @@
+- [21. 合并两个有序链表](https://leetcode-cn.com/problems/merge-two-sorted-lists/)  
+- [83. 删除排序链表中的重复元素](https://leetcode-cn.com/problems/remove-duplicates-from-sorted-list/)  
+- [206. 反转链表](https://leetcode-cn.com/problems/reverse-linked-list/)   
+- [94.二叉树的中序遍历](https://leetcode-cn.com/problems/binary-tree-inorder-traversal/)  
+- [100.相同的树](https://leetcode-cn.com/problems/same-tree/)  
+-  [101.对称二叉树](https://leetcode-cn.com/problems/symmetric-tree/)  
+- 二分查找 
+- 选择排序 
+- 分治法计算数组元素之和、数组长度、数组元素最大值
+- 广度优先搜索算法遍历 Dom 树
+- [102.二叉树的层序遍历](https://leetcode-cn.com/problems/binary-tree-level-order-traversal/)
+- 二叉树的先序遍历
+- 深度优先搜索遍历 Dom 树
+- [122. 买卖股票的最佳时机 II](https://leetcode-cn.com/problems/best-time-to-buy-and-sell-stock-ii/)
+- js实现一个链表
+- 手写深拷贝
+- 实现一个函数，每执行一次，函数值 + 1
+- 计算素数
+- 闭包实现一个缓存模块
+- 实现单例模式，普通版本和闭包版本
+- 实现一个全局唯一的模态框
+
+
+- [1.两数之和](https://leetcode-cn.com/problems/two-sum/)
+- [203. 移除链表元素](https://leetcode-cn.com/problems/remove-linked-list-elements/)
+- [141. 环形链表](https://leetcode-cn.com/problems/linked-list-cycle/submissions/)
+- [231. 2 的幂](https://leetcode-cn.com/problems/power-of-two/)
+- [136. 只出现一次的数字](https://leetcode-cn.com/problems/single-number/)
+- [104.二叉树的最大深度](https://leetcode-cn.com/problems/maximum-depth-of-binary-tree/) 
+- [226. 翻转二叉树](https://leetcode-cn.com/problems/invert-binary-tree/)
+- [20.有效的括号](https://leetcode-cn.com/problems/valid-parentheses/)
+- [71.简化路径](https://leetcode-cn.com/problems/simplify-path/)
+- 冒泡排序
+- 快速排序
