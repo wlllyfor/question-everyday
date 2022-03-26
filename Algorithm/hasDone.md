@@ -31,4 +31,5 @@
 - [20.有效的括号](https://leetcode-cn.com/problems/valid-parentheses/)
 - [71.简化路径](https://leetcode-cn.com/problems/simplify-path/)
 - 冒泡排序
+- 选择排序
 - 快速排序
