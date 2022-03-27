@@ -1,30 +1,66 @@
-const cache = {}
+const str = 'hello'
 
-function isPrime (n) {
-  if (n in cache) {
-    console.log(`cache中有${n}，直接返回 :>> `, cache[n])
-    return cache[n]
+function padStart1(str, length, char) {
+  let res = ''
+  let len = length - str.length
+  for (let i = 0; i < len; i++) {
+    res += char
   }
-
-  let res = n > 1
-
-  for (let i = 2; i < n; i++) {
-    if (n % i === 0) {
-      res = false
-      break
-    }
-  }
-
-  console.log(`cache中没有${n}，存进去 :>> 是否是素数`, res)
-  cache[n] = res
-
-  return res
+  return res + str
 }
 
-isPrime(3)
-isPrime(4)
-isPrime(5)
-isPrime(5)
-isPrime(5)
+function padStart2(str, length, char) {
+  let len = Math.floor(length) - str.length
+  if (len < 1) {
+    return str
+  }
+  let total = ''
+  while(true) {
+    if (len % 2 === 1) {
+      total += char
+    }
+    if (len === 1) {
+      return total + str
+    }
+    len = parseInt(len / 2)
+    char += char
+  }
+}
 
-console.log('cache :>> ', cache)
+function padStart3(str, length, char) {
+  let len = Math.floor(length) - str.length
+  if (len < 1) {
+    return str
+  }
+  let total = ''
+  while(true) {
+    if (len & 1) {
+      total += char
+    }
+    if (len === 1) {
+      return total + str
+    }
+    len = len >> 1
+    char += char
+  }
+}
+
+console.log('循环 10000 次')
+console.time('直接拼接')
+for(let i = 0; i< 10000; i++) {
+  padStart1(str, 10000, '.')
+}
+console.timeEnd('直接拼接')
+
+console.time('二分法')
+for(let i = 0; i< 10000; i++) {
+  padStart2(str, 10000, '.')
+}
+console.timeEnd('二分法')
+
+console.time('二分法 + 位运算')
+for(let i = 0; i< 10000; i++) {
+  padStart3(str, 10000, '.')
+}
+console.timeEnd('二分法 + 位运算')
+
