@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    .modal {
+      width: 200px;
+      height: 200px;
+      border: 1px solid rgb(67, 69, 160);
+      position: fixed;
+      top: 30%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      text-align: center;
+    }
+  </style>
+</head>
+<body>
+  <button id="openBtn">打开模态框</button>
+  <button id="closeBtn">关闭模态框</button>
+  <script>
+    const Modal = (function() {
+      let modal = null
+      return function() {
+        if (!modal) {
+          modal = document.createElement('div')
+          modal.innerHTML = '我是全局唯一的模态框'
+          modal.className = 'modal'
+          modal.style.display = 'none'
+          document.body.appendChild(modal)
+        }
+        return modal
+      }
+    })()
+    
+    // 点击打开按钮展示模态框
+    document.getElementById('openBtn').addEventListener('click', function() {
+    	const modal = new Modal()
+    	modal.style.display = 'block'
+    })
+    
+    // 点击关闭按钮隐藏模态框
+    document.getElementById('closeBtn').addEventListener('click', function() {
+    	const modal = new Modal() // 重新定义一次，其实还是同一个模态框
+    	if(modal) {
+    	  modal.style.display = 'none'
+    	}
+    })
+  </script>
+</body>
+</html>
