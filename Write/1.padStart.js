@@ -64,3 +64,22 @@ function padStart2(str, length, char) {
 }
 
 console.log(padStart(str, 10, '.'))
+
+console.log('循环 10000 次')
+console.time('直接拼接')
+for(let i = 0; i< 10000; i++) {
+  padStart1(str, 10000, '.')
+}
+console.timeEnd('直接拼接')
+
+console.time('二分法')
+for(let i = 0; i< 10000; i++) {
+  padStart2(str, 10000, '.')
+}
+console.timeEnd('二分法')
+
+console.time('二分法 + 位运算')
+for(let i = 0; i< 10000; i++) {
+  padStart3(str, 10000, '.')
+}
+console.timeEnd('二分法 + 位运算')
