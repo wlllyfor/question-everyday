@@ -22,12 +22,12 @@
 
 
 - [1.两数之和](https://leetcode-cn.com/problems/two-sum/)
-- [203. 移除链表元素](https://leetcode-cn.com/problems/remove-linked-list-elements/)
-- [141. 环形链表](https://leetcode-cn.com/problems/linked-list-cycle/submissions/)
-- [231. 2 的幂](https://leetcode-cn.com/problems/power-of-two/)
-- [136. 只出现一次的数字](https://leetcode-cn.com/problems/single-number/)
+- [203.移除链表元素](https://leetcode-cn.com/problems/remove-linked-list-elements/)
+- [141.环形链表](https://leetcode-cn.com/problems/linked-list-cycle/submissions/)
+- [231.2 的幂](https://leetcode-cn.com/problems/power-of-two/)
+- [136.只出现一次的数字](https://leetcode-cn.com/problems/single-number/)
 - [104.二叉树的最大深度](https://leetcode-cn.com/problems/maximum-depth-of-binary-tree/) 
-- [226. 翻转二叉树](https://leetcode-cn.com/problems/invert-binary-tree/)
+- [226.翻转二叉树](https://leetcode-cn.com/problems/invert-binary-tree/)
 - [20.有效的括号](https://leetcode-cn.com/problems/valid-parentheses/)
 - [71.简化路径](https://leetcode-cn.com/problems/simplify-path/)
 - 冒泡排序
@@ -35,3 +35,4 @@
 - 快速排序
 - [三数之和](https://leetcode-cn.com/problems/3sum/)
 - padStart
+- [46.全排列](https://leetcode-cn.com/problems/permutations/)
