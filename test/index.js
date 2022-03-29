@@ -1,15 +1,28 @@
-const o1 = {
-  text: 'o1',
-  fn () {
-    return this.text
+Function.prototype.myCall = function (context = window) {
+  if (context === null || context === undefined) {
+    context = window
+  } else {
+    context = Object(context)
   }
+  const fn = Symbol('fn')
+  context[fn] = this 
+  console.log('context :>> ', context);
+  const args = [...arguments].slice(1) 
+  const res = context[fn](...args) 
+  delete context[fn] 
+  return res 
 }
 
-const o2 = {
-  text: 'o2',
-  fn: o1.fn
+var lastName = 'xxx'
+const person = {
+  lastName: 'lin',
+  fn: 123
 }
 
+function fn () {
+  console.log(this.lastName)
+}
 
-console.log(o1.fn()) 
-console.log(o2.fn()) 
+fn.myCall(person)
+
+console.log('person :>> ', person);
