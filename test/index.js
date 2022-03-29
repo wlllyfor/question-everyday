@@ -1,28 +1,47 @@
-Function.prototype.myCall = function (context = window) {
-  if (context === null || context === undefined) {
-    context = window
-  } else {
-    context = Object(context)
+function exist (board, word) {
+
+  if (board.length === 0 ) {
+    return false
   }
-  const fn = Symbol('fn')
-  context[fn] = this 
-  console.log('context :>> ', context);
-  const args = [...arguments].slice(1) 
-  const res = context[fn](...args) 
-  delete context[fn] 
-  return res 
+
+  if (word.length === 0) {
+    return true
+  }
+
+  let row = board.length
+  let col = board[0].length
+  for (let i = 0; i < row; i++) {
+    for (let j = 0; j < col; j++) {
+      const res = find(i, j, 0)
+      if (res) {
+        return true
+      }
+    }
+  }
+  return false
+
+  function find (i, j, curIndex) {
+    if (i >= row || i < 0 || j >= col || j < 0) {
+      return false
+    }
+  
+    let letter = board[i][j]
+  
+    if (letter !== word[curIndex]) {
+      return false
+    }
+  
+    if (curIndex === word.length - 1) {
+      return true
+    }
+  
+    board[i][j] = null // 标记，已经找过的字母置为 null
+    const res = find(i + 1, j, curIndex + 1)
+             || find(i - 1, j, curIndex + 1)
+             || find(i, j + 1, curIndex + 1)
+             || find(i, j - 1, curIndex + 1)
+    board[i][j] = letter
+  
+    return res
+  }
 }
-
-var lastName = 'xxx'
-const person = {
-  lastName: 'lin',
-  fn: 123
-}
-
-function fn () {
-  console.log(this.lastName)
-}
-
-fn.myCall(person)
-
-console.log('person :>> ', person);
