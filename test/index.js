@@ -1,19 +1,15 @@
-var permute = function(nums) {
-  const res = []
-  function backTracking(path) {
-    if (path.length === nums.length) {
-      res.push(path)
-    }
-    for (let i = 0; i < nums.length; i++) {
-      if (path.includes(nums[i])) {
-        continue
-      }
-      console.log('path :>> ', path);
-      backTracking(path.concat(nums[i]))
-    }
+const o1 = {
+  text: 'o1',
+  fn () {
+    return this.text
   }
-  backTracking([])
-  return res
-};
+}
 
-console.log(permute([1,2,3]))
+const o2 = {
+  text: 'o2',
+  fn: o1.fn
+}
+
+
+console.log(o1.fn()) 
+console.log(o2.fn()) 
