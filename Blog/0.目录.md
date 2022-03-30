@@ -1,0 +1,5 @@
+- [1.BigInt 是什么？ 解决了什么问题？](https://github.com/wlllyfor/question-everyday/blob/main/Blog/1.BigInt%20%E6%98%AF%E4%BB%80%E4%B9%88%EF%BC%9F%20%E8%A7%A3%E5%86%B3%E4%BA%86%E4%BB%80%E4%B9%88%E9%97%AE%E9%A2%98%EF%BC%9F.md)
+- [2.symbol 是什么？ 解决了什么问题？](https://github.com/wlllyfor/question-everyday/blob/main/JS/2.symbol%20%E6%98%AF%E4%BB%80%E4%B9%88%EF%BC%9F%20%E8%A7%A3%E5%86%B3%E4%BA%86%E4%BB%80%E4%B9%88%E9%97%AE%E9%A2%98%EF%BC%9F.md)
+- [3.JS 原始类型和引用类型的区别？](https://github.com/wlllyfor/question-everyday/blob/main/JS/3.JS%20%E5%8E%9F%E5%A7%8B%E7%B1%BB%E5%9E%8B%E5%92%8C%E5%BC%95%E7%94%A8%E7%B1%BB%E5%9E%8B%E7%9A%84%E5%8C%BA%E5%88%AB%EF%BC%9F.md)
+- [4.谈谈 JS 中的类型转换机制](https://github.com/wlllyfor/question-everyday/blob/main/JS/4.%E8%B0%88%E8%B0%88%20JS%20%E4%B8%AD%E7%9A%84%E7%B1%BB%E5%9E%8B%E8%BD%AC%E6%8D%A2%E6%9C%BA%E5%88%B6.md)
+- [5.typeof null 的结果是什么？为什么？](https://github.com/wlllyfor/question-everyday/blob/main/JS/5.typeof%20null%20%E7%9A%84%E7%BB%93%E6%9E%9C%E6%98%AF%E4%BB%80%E4%B9%88%EF%BC%9F%E4%B8%BA%E4%BB%80%E4%B9%88%EF%BC%9F.md)
