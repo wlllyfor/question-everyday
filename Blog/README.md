@@ -3,3 +3,8 @@
 - [3.JS 原始类型和引用类型的区别？](https://github.com/wlllyfor/question-everyday/blob/main/JS/3.JS%20%E5%8E%9F%E5%A7%8B%E7%B1%BB%E5%9E%8B%E5%92%8C%E5%BC%95%E7%94%A8%E7%B1%BB%E5%9E%8B%E7%9A%84%E5%8C%BA%E5%88%AB%EF%BC%9F.md)
 - [4.谈谈 JS 中的类型转换机制](https://github.com/wlllyfor/question-everyday/blob/main/JS/4.%E8%B0%88%E8%B0%88%20JS%20%E4%B8%AD%E7%9A%84%E7%B1%BB%E5%9E%8B%E8%BD%AC%E6%8D%A2%E6%9C%BA%E5%88%B6.md)
 - [5.typeof null 的结果是什么？为什么？](https://github.com/wlllyfor/question-everyday/blob/main/JS/5.typeof%20null%20%E7%9A%84%E7%BB%93%E6%9E%9C%E6%98%AF%E4%BB%80%E4%B9%88%EF%BC%9F%E4%B8%BA%E4%BB%80%E4%B9%88%EF%BC%9F.md)
+- [6.== 和 ===有什么区别，分别在什么情况使用？](https://github.com/wlllyfor/question-everyday/blob/main/JS/6.%3D%3D%20%E5%92%8C%20%3D%3D%3D%E6%9C%89%E4%BB%80%E4%B9%88%E5%8C%BA%E5%88%AB%EF%BC%8C%E5%88%86%E5%88%AB%E5%9C%A8%E4%BB%80%E4%B9%88%E6%83%85%E5%86%B5%E4%BD%BF%E7%94%A8%EF%BC%9F.md)
+- [7.JavaScript中有哪些数据类型？](https://github.com/wlllyfor/question-everyday/blob/main/JS/7.JavaScript%E4%B8%AD%E6%9C%89%E5%93%AA%E4%BA%9B%E6%95%B0%E6%8D%AE%E7%B1%BB%E5%9E%8B%EF%BC%9F.md)
+- [8.Object.is 和 === 有什么区别？](https://github.com/wlllyfor/question-everyday/blob/main/JS/8.Object.is%20%E5%92%8C%20%3D%3D%3D%20%E6%9C%89%E4%BB%80%E4%B9%88%E5%8C%BA%E5%88%AB%EF%BC%9F.md)
+- [9 0.1 + 0.2 为什么不等于 0.3？如何解决？](https://github.com/wlllyfor/question-everyday/blob/main/JS/9.0.1%20%2B%200.2%20%E4%B8%BA%E4%BB%80%E4%B9%88%E4%B8%8D%E7%AD%89%E4%BA%8E%200.3%EF%BC%9F%E5%A6%82%E4%BD%95%E8%A7%A3%E5%86%B3%EF%BC%9F.md)
+- [10.typeof 与 instanceof 有什么区别？](https://github.com/wlllyfor/question-everyday/blob/main/JS/10.typeof%20%E4%B8%8E%20instanceof%20%E6%9C%89%E4%BB%80%E4%B9%88%E5%8C%BA%E5%88%AB%EF%BC%9F.md)
