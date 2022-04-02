@@ -37,3 +37,9 @@
 - padStart
 - [46.全排列](https://leetcode-cn.com/problems/permutations/)
 - [79.单词搜索](https://leetcode-cn.com/problems/word-search/)
+- [860.柠檬水找零](https://leetcode-cn.com/problems/lemonade-change/)
+- [55. 跳跃游戏](https://leetcode-cn.com/problems/jump-game/)
+- [455. 分发饼干](https://leetcode-cn.com/problems/assign-cookies/)
+- [509. 斐波那契数](https://leetcode-cn.com/problems/fibonacci-number/)
+- [300. 最长递增子序列](https://leetcode-cn.com/problems/longest-increasing-subsequence/)
+- 
