@@ -1,7 +1,23 @@
 # question-everyday
 
-包含 HTML、CSS、JS、TypeScript、NodeJS、Vue、React、算法、计算机网络、浏览器、设计模式、性能优化、前端工程等等。  
-
-荀子曰：不积跬步，无以至千里；不积小流，无以成江海；锲而舍之，朽木不折；锲而不舍，金石可镂。  
-
-一天学一个知识点，日积月累，也会蜕变！
+- [1.BigInt 是什么？ 解决了什么问题？](https://github.com/wlllyfor/question-everyday/blob/main/Blog/1.BigInt%20%E6%98%AF%E4%BB%80%E4%B9%88%EF%BC%9F%20%E8%A7%A3%E5%86%B3%E4%BA%86%E4%BB%80%E4%B9%88%E9%97%AE%E9%A2%98%EF%BC%9F.md)
+- [2.symbol 是什么？ 解决了什么问题？](https://github.com/wlllyfor/question-everyday/blob/main/JS/2.symbol%20%E6%98%AF%E4%BB%80%E4%B9%88%EF%BC%9F%20%E8%A7%A3%E5%86%B3%E4%BA%86%E4%BB%80%E4%B9%88%E9%97%AE%E9%A2%98%EF%BC%9F.md)
+- [3.JS 原始类型和引用类型的区别？](https://github.com/wlllyfor/question-everyday/blob/main/JS/3.JS%20%E5%8E%9F%E5%A7%8B%E7%B1%BB%E5%9E%8B%E5%92%8C%E5%BC%95%E7%94%A8%E7%B1%BB%E5%9E%8B%E7%9A%84%E5%8C%BA%E5%88%AB%EF%BC%9F.md)
+- [4.谈谈 JS 中的类型转换机制](https://github.com/wlllyfor/question-everyday/blob/main/JS/4.%E8%B0%88%E8%B0%88%20JS%20%E4%B8%AD%E7%9A%84%E7%B1%BB%E5%9E%8B%E8%BD%AC%E6%8D%A2%E6%9C%BA%E5%88%B6.md)
+- [5.typeof null 的结果是什么？为什么？](https://github.com/wlllyfor/question-everyday/blob/main/JS/5.typeof%20null%20%E7%9A%84%E7%BB%93%E6%9E%9C%E6%98%AF%E4%BB%80%E4%B9%88%EF%BC%9F%E4%B8%BA%E4%BB%80%E4%B9%88%EF%BC%9F.md)
+- [6.== 和 ===有什么区别，分别在什么情况使用？](https://github.com/wlllyfor/question-everyday/blob/main/JS/6.%3D%3D%20%E5%92%8C%20%3D%3D%3D%E6%9C%89%E4%BB%80%E4%B9%88%E5%8C%BA%E5%88%AB%EF%BC%8C%E5%88%86%E5%88%AB%E5%9C%A8%E4%BB%80%E4%B9%88%E6%83%85%E5%86%B5%E4%BD%BF%E7%94%A8%EF%BC%9F.md)
+- [7.JavaScript中有哪些数据类型？](https://github.com/wlllyfor/question-everyday/blob/main/JS/7.JavaScript%E4%B8%AD%E6%9C%89%E5%93%AA%E4%BA%9B%E6%95%B0%E6%8D%AE%E7%B1%BB%E5%9E%8B%EF%BC%9F.md)
+- [8.Object.is 和 === 有什么区别？](https://github.com/wlllyfor/question-everyday/blob/main/JS/8.Object.is%20%E5%92%8C%20%3D%3D%3D%20%E6%9C%89%E4%BB%80%E4%B9%88%E5%8C%BA%E5%88%AB%EF%BC%9F.md)
+- [9 0.1 + 0.2 为什么不等于 0.3？如何解决？](https://github.com/wlllyfor/question-everyday/blob/main/JS/9.0.1%20%2B%200.2%20%E4%B8%BA%E4%BB%80%E4%B9%88%E4%B8%8D%E7%AD%89%E4%BA%8E%200.3%EF%BC%9F%E5%A6%82%E4%BD%95%E8%A7%A3%E5%86%B3%EF%BC%9F.md)
+- [10.typeof 与 instanceof 有什么区别？](https://github.com/wlllyfor/question-everyday/blob/main/JS/10.typeof%20%E4%B8%8E%20instanceof%20%E6%9C%89%E4%BB%80%E4%B9%88%E5%8C%BA%E5%88%AB%EF%BC%9F.md)
+- [11.JS 如何精准地判断数据类型？](https://github.com/wlllyfor/question-everyday/blob/main/JS/11.JS%20%E5%A6%82%E4%BD%95%E7%B2%BE%E5%87%86%E5%9C%B0%E5%88%A4%E6%96%AD%E6%95%B0%E6%8D%AE%E7%B1%BB%E5%9E%8B%EF%BC%9F.md)
+- [12.JavaScript 中数组常用方法有哪些？](https://github.com/wlllyfor/question-everyday/blob/main/JS/12.JavaScript%20%E4%B8%AD%E6%95%B0%E7%BB%84%E5%B8%B8%E7%94%A8%E6%96%B9%E6%B3%95%E6%9C%89%E5%93%AA%E4%BA%9B%EF%BC%9F.md)
+- [13.说一下数组 reduce 方法的一些用法](https://github.com/wlllyfor/question-everyday/blob/main/JS/13.%E8%AF%B4%E4%B8%80%E4%B8%8B%E6%95%B0%E7%BB%84%20reduce%20%E6%96%B9%E6%B3%95%E7%9A%84%E4%B8%80%E4%BA%9B%E7%94%A8%E6%B3%95.md)
+- [14.JavaScript 中如何中断 forEach 循环?](https://github.com/wlllyfor/question-everyday/blob/main/JS/14.JavaScript%20%E4%B8%AD%E5%A6%82%E4%BD%95%E4%B8%AD%E6%96%AD%20forEach%20%E5%BE%AA%E7%8E%AF%3F.md)
+- [15.JavaScript 字符串的常用方法有哪些？](https://github.com/wlllyfor/question-everyday/blob/main/JS/15.JavaScript%20%E5%AD%97%E7%AC%A6%E4%B8%B2%E7%9A%84%E5%B8%B8%E7%94%A8%E6%96%B9%E6%B3%95%E6%9C%89%E5%93%AA%E4%BA%9B%EF%BC%9F.md)
+- [16.深拷贝和浅拷贝的区别？](https://github.com/wlllyfor/question-everyday/blob/main/JS/16.%E6%B7%B1%E6%8B%B7%E8%B4%9D%E5%92%8C%E6%B5%85%E6%8B%B7%E8%B4%9D%E7%9A%84%E5%8C%BA%E5%88%AB%EF%BC%9F.md)
+- [17.手写一个深拷贝](https://github.com/wlllyfor/question-everyday/blob/main/JS/17.%E6%89%8B%E5%86%99%E4%B8%80%E4%B8%AA%E6%B7%B1%E6%8B%B7%E8%B4%9D.md)
+- [18.JS 中伪数组怎么转成数组](https://github.com/wlllyfor/question-everyday/blob/main/JS/18.JS%20%E4%B8%AD%E4%BC%AA%E6%95%B0%E7%BB%84%E6%80%8E%E4%B9%88%E8%BD%AC%E6%88%90%E6%95%B0%E7%BB%84.md)
+- [19.JS 中函数为什么被称为一等公民？](https://github.com/wlllyfor/question-everyday/blob/main/JS/19.JS%20%E4%B8%AD%E5%87%BD%E6%95%B0%E4%B8%BA%E4%BB%80%E4%B9%88%E8%A2%AB%E7%A7%B0%E4%B8%BA%E4%B8%80%E7%AD%89%E5%85%AC%E6%B0%91%EF%BC%9F.md)
+- [20.说一下 JS 中的作用域、作用域链和词法作用域](https://github.com/wlllyfor/question-everyday/blob/main/JS/20.%E8%AF%B4%E4%B8%80%E4%B8%8B%20JS%20%E4%B8%AD%E7%9A%84%E4%BD%9C%E7%94%A8%E5%9F%9F%E3%80%81%E4%BD%9C%E7%94%A8%E5%9F%9F%E9%93%BE%E5%92%8C%E8%AF%8D%E6%B3%95%E4%BD%9C%E7%94%A8%E5%9F%9F.md)
+  
