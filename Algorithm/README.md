@@ -51,3 +51,4 @@
 - [26. 删除有序数组中的重复项](https://leetcode-cn.com/problems/remove-duplicates-from-sorted-array/)
 - [27. 移除元素](https://leetcode-cn.com/problems/remove-element/)
 - [283. 移动零](https://leetcode-cn.com/problems/move-zeroes/)
+- [167. 两数之和 II - 输入有序数组](https://leetcode-cn.com/problems/two-sum-ii-input-array-is-sorted/)
