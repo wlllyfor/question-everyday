@@ -52,3 +52,4 @@
 - [27. 移除元素](https://leetcode-cn.com/problems/remove-element/)
 - [283. 移动零](https://leetcode-cn.com/problems/move-zeroes/)
 - [167. 两数之和 II - 输入有序数组](https://leetcode-cn.com/problems/two-sum-ii-input-array-is-sorted/)
+- [977. 有序数组的平方](https://leetcode-cn.com/problems/squares-of-a-sorted-array/)
