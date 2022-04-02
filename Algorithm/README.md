@@ -43,3 +43,11 @@
 - [509. 斐波那契数](https://leetcode-cn.com/problems/fibonacci-number/)
 - [300. 最长递增子序列](https://leetcode-cn.com/problems/longest-increasing-subsequence/)
 - [94. 二叉树的中序遍历](https://leetcode-cn.com/problems/binary-tree-inorder-traversal/)
+- [144. 二叉树的前序遍历](https://leetcode-cn.com/problems/binary-tree-preorder-traversal/)
+- [145. 二叉树的后序遍历](https://leetcode-cn.com/problems/binary-tree-postorder-traversal/)
+
+## 数组
+
+- [26. 删除有序数组中的重复项](https://leetcode-cn.com/problems/remove-duplicates-from-sorted-array/)
+- [27. 移除元素](https://leetcode-cn.com/problems/remove-element/)
+- [283. 移动零](https://leetcode-cn.com/problems/move-zeroes/)
