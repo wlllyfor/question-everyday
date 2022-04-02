@@ -1,14 +1,5 @@
-const foo = {
-  name: 'lin',
-  sayName() {
-    console.log(this.name)
-  }
-}
+a()
 
-const bar = {
-  name: 'xxx'
+let a = function () {
+  console.log(123)
 }
-
-foo.sayName.call(bar)   // ?
-foo.sayName.apply(bar)  // ?
-foo.sayName.bind(bar)() // ?
