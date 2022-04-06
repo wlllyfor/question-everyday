@@ -53,3 +53,11 @@
 - [283. 移动零](https://leetcode-cn.com/problems/move-zeroes/)
 - [167. 两数之和 II - 输入有序数组](https://leetcode-cn.com/problems/two-sum-ii-input-array-is-sorted/)
 - [977. 有序数组的平方](https://leetcode-cn.com/problems/squares-of-a-sorted-array/)
+- [209. 长度最小的子数组](https://leetcode-cn.com/problems/minimum-size-subarray-sum/)
+- [344. 反转字符串](https://leetcode-cn.com/problems/reverse-string/)
+
+## 链表
+
+- [206. 反转链表](https://leetcode-cn.com/problems/reverse-linked-list/)
+- [19. 删除链表的倒数第 N 个结点](https://leetcode-cn.com/problems/remove-nth-node-from-end-of-list/)
+- [21. 合并两个有序链表](https://leetcode-cn.com/problems/merge-two-sorted-lists/)
