@@ -1,6 +1,4 @@
-- [21. 合并两个有序链表](https://leetcode-cn.com/problems/merge-two-sorted-lists/)  
-- [83. 删除排序链表中的重复元素](https://leetcode-cn.com/problems/remove-duplicates-from-sorted-list/)  
-- [206. 反转链表](https://leetcode-cn.com/problems/reverse-linked-list/)   
+
 - [94.二叉树的中序遍历](https://leetcode-cn.com/problems/binary-tree-inorder-traversal/)  
 - [100.相同的树](https://leetcode-cn.com/problems/same-tree/)  
 -  [101.对称二叉树](https://leetcode-cn.com/problems/symmetric-tree/)  
@@ -21,9 +19,7 @@
 - 实现一个全局唯一的模态框
 
 
-- [1. 两数之和](https://leetcode-cn.com/problems/two-sum/)
-- [203. 移除链表元素](https://leetcode-cn.com/problems/remove-linked-list-elements/)
-- [141. 环形链表](https://leetcode-cn.com/problems/linked-list-cycle/submissions/)
+
 - [231. 2 的幂](https://leetcode-cn.com/problems/power-of-two/)
 - [136. 只出现一次的数字](https://leetcode-cn.com/problems/single-number/)
 - [104. 二叉树的最大深度](https://leetcode-cn.com/problems/maximum-depth-of-binary-tree/) 
@@ -48,6 +44,7 @@
 
 ## 数组
 
+- [1. 两数之和](https://leetcode-cn.com/problems/two-sum/)
 - [26. 删除有序数组中的重复项](https://leetcode-cn.com/problems/remove-duplicates-from-sorted-array/)
 - [27. 移除元素](https://leetcode-cn.com/problems/remove-element/)
 - [283. 移动零](https://leetcode-cn.com/problems/move-zeroes/)
@@ -61,3 +58,11 @@
 - [206. 反转链表](https://leetcode-cn.com/problems/reverse-linked-list/)
 - [19. 删除链表的倒数第 N 个结点](https://leetcode-cn.com/problems/remove-nth-node-from-end-of-list/)
 - [21. 合并两个有序链表](https://leetcode-cn.com/problems/merge-two-sorted-lists/)
+- [876. 链表的中间结点](https://leetcode-cn.com/problems/middle-of-the-linked-list/)
+- [203. 移除链表元素](https://leetcode-cn.com/problems/remove-linked-list-elements/)
+- [141. 环形链表](https://leetcode-cn.com/problems/linked-list-cycle/submissions/)
+- [83. 删除排序链表中的重复元素](https://leetcode-cn.com/problems/remove-duplicates-from-sorted-list/)  
+- [160. 相交链表](https://leetcode-cn.com/problems/intersection-of-two-linked-lists/)
+- [142. 环形链表 II](https://leetcode-cn.com/problems/linked-list-cycle-ii/)
+- 
+- [92. 反转链表 II](https://leetcode-cn.com/problems/reverse-linked-list-ii/)
