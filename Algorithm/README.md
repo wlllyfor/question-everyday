@@ -1,3 +1,44 @@
+## 解题方法（套路）
+
+### 树的遍历
+
+以二叉树的前序遍历为例
+
+```js
+function preOrder (root) {
+  let res = []
+  function walk(root) {
+    if (!root) {
+      return null
+    }
+    res.push(root.val)
+    walk(root.left)
+    walk(root.right)
+  }
+  walk(root)
+  return res
+}
+```
+
+迭代：
+
+```js
+function preOrder (root) {
+  let res = []
+  if (!root) {
+    return res
+  }
+  let stack = [root]
+  while(stack.length) {
+    const cur = stack.pop()
+    res.push(cur.val)
+    cur.right && stack.push(cur.right)
+    cur.left && stack.push(cur.left)
+  }
+  return res
+}
+```
+
 - 二分查找 
 - 选择排序 
 - 分治法计算数组元素之和、数组长度、数组元素最大值
