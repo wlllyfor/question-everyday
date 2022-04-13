@@ -1,5 +1,42 @@
 
-const msg = 111
-console.warn(
-  `\x1b[1m\x1b[33m[@vue/compiler-sfc]\x1b[0m\x1b[33m ${msg}\x1b[0m\n`
-)
+const node = {
+  val: 1,
+  left: {
+    val: 2,
+    left: {
+      val: 4
+    },
+    right: {
+      val: 5
+    }
+  },
+  right: {
+    val: 3,
+    left: {
+      val: 6
+    },
+    right: {
+      val: 7
+    }
+  }
+}
+
+function bfs(root) {
+  let res = []
+  if (!root) {
+    return res
+  }
+  let queue = [root]
+
+  while(queue.length) {
+    const node = queue.shift()
+    res.push(node.val)
+    node.left && queue.push(node.left)
+    node.right && queue.push(node.right)
+  }
+  return res
+}
+
+const res = bfs(node)
+
+console.log('res :>> ', res);

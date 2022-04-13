@@ -114,5 +114,14 @@ function preOrder (root) {
 - [236. 二叉树的最近公共祖先](https://leetcode-cn.com/problems/lowest-common-ancestor-of-a-binary-tree/)
 - [543. 二叉树的直径](https://leetcode-cn.com/problems/diameter-of-binary-tree/)
 - [572. 另一棵树的子树](https://leetcode-cn.com/problems/subtree-of-another-tree/)
-
+- [110. 平衡二叉树](https://leetcode-cn.com/problems/balanced-binary-tree/)
+- [222. 完全二叉树的节点个数](https://leetcode-cn.com/problems/count-complete-tree-nodes/)
+- [257. 二叉树的所有路径](https://leetcode-cn.com/problems/binary-tree-paths/)
 - [102. 二叉树的层序遍历](https://leetcode-cn.com/problems/binary-tree-level-order-traversal/)
+- [107. 二叉树的层序遍历 II](https://leetcode-cn.com/problems/binary-tree-level-order-traversal-ii/)
+- [199. 二叉树的右视图](https://leetcode-cn.com/problems/binary-tree-right-side-view/)
+- [637. 二叉树的层平均值](https://leetcode-cn.com/problems/average-of-levels-in-binary-tree/)
+- [116. 填充每个节点的下一个右侧节点指针](https://leetcode-cn.com/problems/populating-next-right-pointers-in-each-node/)
+- [117. 填充每个节点的下一个右侧节点指针 II](https://leetcode-cn.com/problems/populating-next-right-pointers-in-each-node-ii/)
+- 429
+- 515
