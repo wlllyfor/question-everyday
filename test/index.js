@@ -1,25 +1,5 @@
-const node = {
-  tag: 'div',
-  children: [
-    {
-      tag: 'h1',
-      children: 'hello'
-    }
-  ]
-}
 
-function render (node, root) {
-  const el = document.createElement(node.tag)
-  if (typeof node.children === 'string') {
-    const text = document.createTextNode(node.children)
-    el.appendChild(text)
-  }
-  if (Array.isArray(node.children)) {
-    node.children.forEach(child => render(child, el))
-  }
-  root.appendChild(el)
-}
-
-const app = document.getElementById('app')
-
-render(node, app)
+const msg = 111
+console.warn(
+  `\x1b[1m\x1b[33m[@vue/compiler-sfc]\x1b[0m\x1b[33m ${msg}\x1b[0m\n`
+)
