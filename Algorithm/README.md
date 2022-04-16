@@ -127,7 +127,7 @@ function preOrder (root) {
 - [515. 在每个树行中找最大值](https://leetcode-cn.com/problems/find-largest-value-in-each-tree-row/)
 - [112. 路径总和](https://leetcode-cn.com/problems/path-sum/)
 - [404. 左叶子之和](https://leetcode-cn.com/problems/sum-of-left-leaves/)
-- 98
+- [98. 验证二叉搜索树](https://leetcode-cn.com/problems/validate-binary-search-tree/)
 - 99
 - 108
 - 109
