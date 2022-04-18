@@ -128,7 +128,7 @@ function preOrder (root) {
 - [112. 路径总和](https://leetcode-cn.com/problems/path-sum/)
 - [404. 左叶子之和](https://leetcode-cn.com/problems/sum-of-left-leaves/)
 - [98. 验证二叉搜索树](https://leetcode-cn.com/problems/validate-binary-search-tree/)
-- 99
+- [99. 恢复二叉搜索树](https://leetcode-cn.com/problems/recover-binary-search-tree/comments/)
 - 108
 - 109
 - 654
