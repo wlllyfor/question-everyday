@@ -57,21 +57,11 @@ function preOrder (root) {
 
 - [231. 2 的幂](https://leetcode-cn.com/problems/power-of-two/)
 - [136. 只出现一次的数字](https://leetcode-cn.com/problems/single-number/)
-
-- [20. 有效的括号](https://leetcode-cn.com/problems/valid-parentheses/)
-- [71. 简化路径](https://leetcode-cn.com/problems/simplify-path/)
 - 冒泡排序
 - 选择排序
 - 快速排序
-- [15. 三数之和](https://leetcode-cn.com/problems/3sum/)
-- padStart
-- [46. 全排列](https://leetcode-cn.com/problems/permutations/)
-- [79. 单词搜索](https://leetcode-cn.com/problems/word-search/)
-- [860. 柠檬水找零](https://leetcode-cn.com/problems/lemonade-change/)
-- [55. 跳跃游戏](https://leetcode-cn.com/problems/jump-game/)
-- [455. 分发饼干](https://leetcode-cn.com/problems/assign-cookies/)
-- [509. 斐波那契数](https://leetcode-cn.com/problems/fibonacci-number/)
-- [300. 最长递增子序列](https://leetcode-cn.com/problems/longest-increasing-subsequence/)
+
+
 
 
 ## 数组
@@ -84,6 +74,7 @@ function preOrder (root) {
 - [977. 有序数组的平方](https://leetcode-cn.com/problems/squares-of-a-sorted-array/)
 - [209. 长度最小的子数组](https://leetcode-cn.com/problems/minimum-size-subarray-sum/)
 - [344. 反转字符串](https://leetcode-cn.com/problems/reverse-string/)
+- [15. 三数之和](https://leetcode-cn.com/problems/3sum/)
 
 ## 链表
 
@@ -129,9 +120,77 @@ function preOrder (root) {
 - [404. 左叶子之和](https://leetcode-cn.com/problems/sum-of-left-leaves/)
 - [98. 验证二叉搜索树](https://leetcode-cn.com/problems/validate-binary-search-tree/)
 - [99. 恢复二叉搜索树](https://leetcode-cn.com/problems/recover-binary-search-tree/comments/)
-- 108
-- 109
-- 654
-- 230
-- 700
-- 701
+- [108. 将有序数组转换为二叉搜索树](https://leetcode-cn.com/problems/convert-sorted-array-to-binary-search-tree/)
+- [109. 有序链表转换二叉搜索树](https://leetcode-cn.com/problems/convert-sorted-list-to-binary-search-tree/)
+- [654. 最大二叉树](https://leetcode-cn.com/problems/maximum-binary-tree/)
+- [230. 二叉搜索树中第K小的元素](https://leetcode-cn.com/problems/kth-smallest-element-in-a-bst/)
+- [700. 二叉搜索树中的搜索](https://leetcode-cn.com/problems/search-in-a-binary-search-tree/)
+- [701. 二叉搜索树中的插入操作](https://leetcode-cn.com/problems/insert-into-a-binary-search-tree/)
+  
+## 栈和队列
+
+- [20. 有效的括号](https://leetcode-cn.com/problems/valid-parentheses/)
+- [71. 简化路径](https://leetcode-cn.com/problems/simplify-path/)
+- [225. 用队列实现栈](https://leetcode-cn.com/problems/implement-stack-using-queues/)
+- [232](https://leetcode-cn.com/problems/implement-queue-using-stacks/)
+- [1047. 删除字符串中的所有相邻重复项](https://leetcode-cn.com/problems/remove-all-adjacent-duplicates-in-string/)
+- [150. 逆波兰表达式求值](https://leetcode-cn.com/problems/evaluate-reverse-polish-notation/)
+- [151. 颠倒字符串中的单词](https://leetcode-cn.com/problems/reverse-words-in-a-string/)
+
+## 二分
+
+- padStart
+- 704
+- 35
+- 153
+- 69
+
+## 回溯和搜索
+
+- [46. 全排列](https://leetcode-cn.com/problems/permutations/)
+- [79. 单词搜索](https://leetcode-cn.com/problems/word-search/)
+- 17
+- 39
+- 77
+- 78
+- 131
+- 93
+- 37
+- 47
+- 51
+
+## 贪心
+
+- [860. 柠檬水找零](https://leetcode-cn.com/problems/lemonade-change/)
+- [55. 跳跃游戏](https://leetcode-cn.com/problems/jump-game/)
+- [455. 分发饼干](https://leetcode-cn.com/problems/assign-cookies/)
+- [300. 最长递增子序列](https://leetcode-cn.com/problems/longest-increasing-subsequence/)
+
+## 动态规划
+
+- [509. 斐波那契数](https://leetcode-cn.com/problems/fibonacci-number/)
+- 70
+- 746
+- 62
+- 63
+- 322
+- 198
+- 213
+- 337
+- 121
+- 122
+- 123
+- 188
+- 309
+- 714
+- 1143
+- 115
+- 392
+- 53
+- 583
+- 674
+- 72
+- 416
+- 518
+- 64
+- 174
