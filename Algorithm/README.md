@@ -132,7 +132,7 @@ function preOrder (root) {
 - [20. 有效的括号](https://leetcode-cn.com/problems/valid-parentheses/)
 - [71. 简化路径](https://leetcode-cn.com/problems/simplify-path/)
 - [225. 用队列实现栈](https://leetcode-cn.com/problems/implement-stack-using-queues/)
-- [232](https://leetcode-cn.com/problems/implement-queue-using-stacks/)
+- [232. 栈实现队列](https://leetcode-cn.com/problems/implement-queue-using-stacks/)
 - [1047. 删除字符串中的所有相邻重复项](https://leetcode-cn.com/problems/remove-all-adjacent-duplicates-in-string/)
 - [150. 逆波兰表达式求值](https://leetcode-cn.com/problems/evaluate-reverse-polish-notation/)
 - [151. 颠倒字符串中的单词](https://leetcode-cn.com/problems/reverse-words-in-a-string/)
@@ -140,7 +140,7 @@ function preOrder (root) {
 ## 二分
 
 - padStart
-- 704
+- [704. 二分查找](https://leetcode-cn.com/problems/binary-search/)
 - 35
 - 153
 - 69
