@@ -1,9 +1,24 @@
-const o = new Map()
+const html = document.documentElement
 
-o.set('a', 'a')
-o.set('b', 'b')
-o.set('c', 'c')
+console.log('html :>> ', html);
 
-console.log('o :>> ', o);
-console.log('o.keys :>> ', o.keys());
-console.log('o.keys().next :>> ', o.keys().next());
+function getDomNodes (root) {
+  let res = []
+  dfs(root, res)
+  return res
+}
+
+function dfs(root, arr) {
+  if (!root) {
+    return null
+  }
+  arr.push(root)
+  const children = root.children
+  if (children) {
+    for (let child of children) {
+      dfs(child, arr)
+    }
+  }
+}
+
+console.log(getDomNodes(html))
