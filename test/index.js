@@ -1,24 +1,14 @@
-const html = document.documentElement
-
-console.log('html :>> ', html);
-
-function getDomNodes (root) {
-  let res = []
-  dfs(root, res)
-  return res
+function swap1(arr, i, j) {
+	let temp = arr[i]
+	arr[i] = arr[j]
+	arr[j] = temp
+	return arr
 }
 
-function dfs(root, arr) {
-  if (!root) {
-    return null
-  }
-  arr.push(root)
-  const children = root.children
-  if (children) {
-    for (let child of children) {
-      dfs(child, arr)
-    }
-  }
+function swap2(arr, i, j) {
+	[arr[i], arr[j]] = [arr[j], arr[i]]
+	return arr
 }
 
-console.log(getDomNodes(html))
+console.log(swap1([1,2], 0, 1))
+console.log(swap2([1,2], 0, 1))

@@ -141,17 +141,17 @@ function preOrder (root) {
 
 - padStart
 - [704. 二分查找](https://leetcode-cn.com/problems/binary-search/)
-- 35
-- 153
-- 69
+- [35. 搜索插入位置](https://leetcode-cn.com/problems/search-insert-position/)
+- [153. 寻找旋转排序数组中的最小值](https://leetcode-cn.com/problems/find-minimum-in-rotated-sorted-array/)
+- [69. x 的平方根 ](https://leetcode-cn.com/problems/sqrtx/)
 
 ## 回溯和搜索
 
 - [46. 全排列](https://leetcode-cn.com/problems/permutations/)
 - [79. 单词搜索](https://leetcode-cn.com/problems/word-search/)
-- 17
-- 39
-- 77
+- [17. 电话号码的字母组合](https://leetcode-cn.com/problems/letter-combinations-of-a-phone-number/)
+- [39. 组合总和](https://leetcode-cn.com/problems/combination-sum/)
+- [77. 组合](https://leetcode-cn.com/problems/combinations/)
 - 78
 - 131
 - 93
