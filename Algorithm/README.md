@@ -143,7 +143,7 @@ function preOrder (root) {
 - [704. 二分查找](https://leetcode-cn.com/problems/binary-search/)
 - [35. 搜索插入位置](https://leetcode-cn.com/problems/search-insert-position/)
 - [153. 寻找旋转排序数组中的最小值](https://leetcode-cn.com/problems/find-minimum-in-rotated-sorted-array/)
-- [69. x 的平方根 ](https://leetcode-cn.com/problems/sqrtx/)
+- [69. x 的平方根](https://leetcode-cn.com/problems/sqrtx/)
 
 ## 回溯和搜索
 
@@ -152,12 +152,13 @@ function preOrder (root) {
 - [17. 电话号码的字母组合](https://leetcode-cn.com/problems/letter-combinations-of-a-phone-number/)
 - [39. 组合总和](https://leetcode-cn.com/problems/combination-sum/)
 - [77. 组合](https://leetcode-cn.com/problems/combinations/)
-- 78
-- 131
-- 93
-- 37
-- 47
-- 51
+- [78. 子集](https://leetcode-cn.com/problems/subsets/)
+- [131. 分割回文串](https://leetcode-cn.com/problems/palindrome-partitioning/)
+- [93. 复原 IP 地址](https://leetcode-cn.com/problems/restore-ip-addresses/)
+- [47. 全排列 II](https://leetcode-cn.com/problems/permutations-ii/)
+- [51. N 皇后](https://leetcode-cn.com/problems/n-queens/)
+- [37. 解数独](https://leetcode-cn.com/problems/sudoku-solver/)
+
 
 ## 贪心
 

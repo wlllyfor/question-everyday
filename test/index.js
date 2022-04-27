@@ -1,14 +1,15 @@
-function swap1(arr, i, j) {
-	let temp = arr[i]
-	arr[i] = arr[j]
-	arr[j] = temp
-	return arr
-}
+const num = -0.9
 
-function swap2(arr, i, j) {
-	[arr[i], arr[j]] = [arr[j], arr[i]]
-	return arr
-}
+console.log(0.9 | 0)
+console.log(-1.9 | 0)
+console.log(1.2 | 0)
+console.log(1.6 | 0)
 
-console.log(swap1([1,2], 0, 1))
-console.log(swap2([1,2], 0, 1))
+console.log('1111 :>> ', 1111);
+
+console.log(0.9 | 0.9)  // 输出 0  ✔️
+console.log(-1.9 | -1.9) // 输出 0 ✔️
+console.log(1.2 | 1.2)  // 输出 1  ✔️
+console.log(1.6 | 1.6)  // 输出 1  ✔️
+
+console.log((2 ** 31 - 1) | 0)
