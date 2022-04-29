@@ -39,8 +39,8 @@ function preOrder (root) {
 }
 ```
 
-- 二分查找 
-- 选择排序 
+- 二分查找
+- 选择排序
 - 分治法计算数组元素之和、数组长度、数组元素最大值
 - 广度优先搜索算法遍历 Dom 树
 - 深度优先搜索遍历 Dom 树
@@ -53,16 +53,11 @@ function preOrder (root) {
 - 实现单例模式，普通版本和闭包版本
 - 实现一个全局唯一的模态框
 
-
-
 - [231. 2 的幂](https://leetcode-cn.com/problems/power-of-two/)
 - [136. 只出现一次的数字](https://leetcode-cn.com/problems/single-number/)
 - 冒泡排序
 - 选择排序
 - 快速排序
-
-
-
 
 ## 数组
 
@@ -97,7 +92,7 @@ function preOrder (root) {
 - [145. 二叉树的后序遍历](https://leetcode-cn.com/problems/binary-tree-postorder-traversal/)
 - [100. 相同的树](https://leetcode-cn.com/problems/same-tree/)
 - [101. 对称二叉树](https://leetcode-cn.com/problems/symmetric-tree/)
-- [104. 二叉树的最大深度](https://leetcode-cn.com/problems/maximum-depth-of-binary-tree/) 
+- [104. 二叉树的最大深度](https://leetcode-cn.com/problems/maximum-depth-of-binary-tree/)
 - [226. 翻转二叉树](https://leetcode-cn.com/problems/invert-binary-tree/)
 - [111. 二叉树的最小深度](https://leetcode-cn.com/problems/minimum-depth-of-binary-tree/)
 - [114. 二叉树展开为链表](https://leetcode-cn.com/problems/flatten-binary-tree-to-linked-list/)
@@ -159,7 +154,6 @@ function preOrder (root) {
 - [51. N 皇后](https://leetcode-cn.com/problems/n-queens/)
 - [37. 解数独](https://leetcode-cn.com/problems/sudoku-solver/)
 
-
 ## 贪心
 
 - [860. 柠檬水找零](https://leetcode-cn.com/problems/lemonade-change/)
@@ -170,13 +164,13 @@ function preOrder (root) {
 ## 动态规划
 
 - [509. 斐波那契数](https://leetcode-cn.com/problems/fibonacci-number/)
-- 70
-- 746
-- 62
-- 63
-- 322
-- 198
-- 213
+- [70. 爬楼梯](https://leetcode-cn.com/problems/climbing-stairs/)
+- [746. 使用最小花费爬楼梯](https://leetcode-cn.com/problems/min-cost-climbing-stairs/)
+- [62. 不同路径](https://leetcode-cn.com/problems/unique-paths/)
+- [63. 不同路径 II](https://leetcode-cn.com/problems/unique-paths-ii/)
+- [322. 零钱兑换](https://leetcode-cn.com/problems/coin-change/)
+- [198. 打家劫舍](https://leetcode-cn.com/problems/house-robber/)
+- [213. 打家劫舍 II](https://leetcode-cn.com/problems/house-robber-ii/)
 - 337
 - 121
 - 122
