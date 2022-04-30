@@ -45,7 +45,7 @@ function preOrder (root) {
 - 广度优先搜索算法遍历 Dom 树
 - 深度优先搜索遍历 Dom 树
 - [122. 买卖股票的最佳时机 II](https://leetcode-cn.com/problems/best-time-to-buy-and-sell-stock-ii/)
-- js实现一个链表
+- js 实现一个链表
 - 手写深拷贝
 - 实现一个函数，每执行一次，函数值 + 1
 - 计算素数
@@ -172,20 +172,20 @@ function preOrder (root) {
 - [198. 打家劫舍](https://leetcode-cn.com/problems/house-robber/)
 - [213. 打家劫舍 II](https://leetcode-cn.com/problems/house-robber-ii/)
 - [337. 打家劫舍 III](https://leetcode-cn.com/problems/house-robber-iii/)
-- 121
-- 122
-- 123
+- [121. 买卖股票的最佳时机](https://leetcode-cn.com/problems/best-time-to-buy-and-sell-stock/)
+- [122. 买卖股票的最佳时机 II](https://leetcode-cn.com/problems/best-time-to-buy-and-sell-stock-ii/)
+- [123. 买卖股票的最佳时机 III](https://leetcode-cn.com/problems/best-time-to-buy-and-sell-stock-iii/)
 - 188
 - 309
-- 714
-- 1143
+- [714. 买卖股票的最佳时机含手续费](https://leetcode-cn.com/problems/best-time-to-buy-and-sell-stock-with-transaction-fee/)
+- [1143. 最长公共子序列](https://leetcode-cn.com/problems/longest-common-subsequence/)
 - 115
-- 392
-- 53
+- [392. 判断子序列](https://leetcode-cn.com/problems/is-subsequence/)
+- [53. 最大子数组和](https://leetcode-cn.com/problems/maximum-subarray/)
 - 583
-- 674
+- [674. 最长连续递增序列](https://leetcode-cn.com/problems/longest-continuous-increasing-subsequence/)
 - 72
 - 416
-- 518
+- [518. 零钱兑换 II](https://leetcode-cn.com/problems/coin-change-2/)
 - 64
 - 174
