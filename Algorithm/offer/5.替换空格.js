@@ -4,10 +4,17 @@
  * 
  * 正则
  */
-var replaceSpace = function(s) {
-  // return s.replace(/ /g, '%20')
+function replaceSpace (s) {
+  return s.replace(/ /g, '%20')
+}
+
+/**
+ * API
+ */
+function replaceSpace (s) {
   return s.replaceAll(' ', '%20')
-};
+}
+
 
 /**
  * API

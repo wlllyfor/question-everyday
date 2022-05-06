@@ -5,14 +5,14 @@
  * 排序
  * O(nlogn)
  */
-// var findRepeatNumber = function(nums) {
-//   nums.sort()
-//   for (let i = 1; i < nums.length; i++) {
-//     if (nums[i] === nums[i - 1]) {
-//       return nums[i]
-//     }
-//   }
-// };
+function findRepeatNumber (nums) {
+  nums.sort()
+  for (let i = 1; i < nums.length; i++) {
+    if (nums[i] === nums[i - 1]) {
+      return nums[i]
+    }
+  }
+}
 
 /**
  * 暴力法
@@ -38,6 +38,28 @@ function findRepeatNumber(nums) {
       map[nums[i]] = true
     } else {
       return nums[i]
+    }    
+  }
+}
+
+function findRepeatNumber(nums) {
+  const map = {}
+  for (let i = 0; i < nums.length; i++) {
+    if (nums[i] in map) {
+      return nums[i]
+    } else {
+      map[nums[i]] = true
+    }    
+  }
+}
+
+function findRepeatNumber(nums) {
+  const map = new Map()
+  for (let i = 0; i < nums.length; i++) {
+    if (map.has(nums[i])) {
+      return nums[i]
+    } else {
+      map.set([nums[i]], true)
     }    
   }
 }
