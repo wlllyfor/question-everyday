@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+  <script src="http://libs.baidu.com/jquery/2.0.0/jquery.min.js"></script>
+  <link rel="stylesheet" href="index.css">
+</head>
+<body>
+  <div id="app">
+    <div class="arr">
+      <div v-for="item in arr" class="arr-item">
+        {{ item }}
+      </div>
+    </div>
+    <div class="img">
+      <img id='imgI' class="img-item img-i" src="./imgs/i.png" alt="" srcset="">
+      <img id='imgJ' class="img-item img-j" src="./imgs/j.png" alt="" srcset="">
+      <p class="text">{{ msg }}</p>
+      <p class="text1">{{ msg1 }}</p>
+    </div>
+    <button @click="start">start</button>
+    <button @click="next1">next1</button>
+    <button @click="next2">next2</button>
+    <button @click="next3">next3</button>
+    <button @click="next4">next4</button>
+    <button @click="next5">next5</button>
+    <button @click="next6">next6</button>
+  </div>
+  <script src="index.js"></script>
+</body>
+</html>

@@ -1,0 +1,46 @@
+#app {
+  padding: 30px 0 0 200px;
+}
+.arr {
+  display: flex;
+}
+.arr-item {
+  width: 50px;
+  height: 50px;
+  border: 1px solid rgb(185, 181, 181);
+  border-right: none;
+  text-align: center;
+  line-height: 50px;
+}
+.arr-item:last-child {
+  border-right: 1px solid rgb(185, 181, 181);
+}
+.img {
+  width: 600px;
+  height: 300px;
+  position: relative;
+}
+.img-item {
+  position: absolute;
+  
+  top: 10px;
+}
+.img-i {
+  left:460px;
+  width: 20px;
+}
+.img-j {
+  left:560px;
+  width: 16px;
+  top: 14px;
+}
+.text {
+  position: absolute;
+  top: 120px;
+  color:cadetblue
+}
+.text1 {
+  position: absolute;
+  top: 160px;
+  color:rgb(248, 117, 42)
+}
