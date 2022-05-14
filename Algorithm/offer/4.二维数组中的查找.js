@@ -35,3 +35,20 @@ function findNumberIn2DArray (matrix, target) {
   }
   return false
 }
+// function findNumberIn2DArray (matrix, target) {
+//   if (matrix.length === 0) {
+//     return false
+//   }
+//   let row = matrix.length - 1
+//   let col = 0
+//   while (row >= 0 && col < matrix[0].length) {
+//     if (matrix[row][col] === target) {
+//       return true
+//     } else if (matrix[row][col] < target) {
+//       col++
+//     } else {
+//       row--
+//     }
+//   }
+//   return false
+// }
