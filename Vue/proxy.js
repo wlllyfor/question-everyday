@@ -1,26 +1,26 @@
-function reactive(target) {
-  return new Proxy(target, {
-    get(target, key) {
-      return target[key]
-    },
-    set(target, key, val) {
-      target[key] = val
-      render()
+let fn = null
+
+function reactive(obj) {
+  return new Proxy(obj, {
+    set(obj, key, val) {
+      obj[key] = val
+      fn()
     }
   })
 }
-let data = {
-  name: 'lin',
-  age: 18,
-  sex: 'male'
+
+function effect(callback) {
+  fn = callback
+  callback()
 }
 
-let obj = reactive(data)
+const p = reactive({
+  a: 5
+})
 
-obj.name = 'xxx'
+effect(updateB)
 
-function render() {
-  let app = document.getElementById('app')
-  app.innerHTML = JSON.stringify(data)
+function updateB() {
+  b = p.a * 10
+  console.log(`b的值为：${b}`)
 }
- 

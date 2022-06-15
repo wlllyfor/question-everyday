@@ -1,19 +1,34 @@
-function myGet(object, path, defaultValue) {
+const { createApp, reactive, effect, ref } = Vue;
+createApp().mount("#app")
 
-  let newPath
-  if (Array.isArray(path)) {
-    newPath = path
-  } else {
-    newPath = path.replace(/\[(\d+)\]/g, '.$1').split('.')
-  }
+// const userInfo = reactive({
+//   name: 'lin'
+// })
 
-  let res = object
-  for (const p of newPath) {
-    res = (res || {})[p]
-  }
-  return res || defaultValue
-}
+// let name
+// effect(() => {
+//   name = userInfo.name
+// })
 
-const obj = {}
+// let a = ref(5)
+// let b
 
-console.log(_.get(obj, 'a.b')) // 输出 undefined
+// effect(() => {
+//   b = a.value * 10
+// })
+// const p = new Proxy({
+//   a: 5
+// }, {
+//   set(obj, key, val) {
+//     obj[key] = val
+//     updateB(val) // 在 set 方法里执行 updateB 方法
+//   }
+// })
+// let b = p.a * 10
+
+// function updateB(val) {
+//   b = val * 10
+//   console.log(`b的值为：${b}`)
+// }
+
+
