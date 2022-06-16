@@ -5,6 +5,12 @@ function reactive(obj) {
     set(obj, key, val) {
       obj[key] = val
       fn()
+      return true
+    },
+    deleteProperty(obj, key) {
+      delete obj[key]
+      fn()
+      return true
     }
   })
 }
@@ -14,13 +20,14 @@ function effect(callback) {
   callback()
 }
 
-const p = reactive({
-  a: 5
+let userInfo = reactive({
+  name: 'lin',
+  age: 18
 })
 
-effect(updateB)
+effect(render)
 
-function updateB() {
-  b = p.a * 10
-  console.log(`b的值为：${b}`)
+function render() {
+  let app = document.getElementById('app')
+  app.innerHTML = JSON.stringify(userInfo) // 把数据渲染到页面中
 }

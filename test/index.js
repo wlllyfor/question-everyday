@@ -1,34 +1,23 @@
-const { createApp, reactive, effect, ref } = Vue;
-createApp().mount("#app")
 
-// const userInfo = reactive({
-//   name: 'lin'
-// })
+function createArr(n) {
+  const arr = []
+  for(let i = 0; i < n; i++) {
+    arr[i] = i + 1
+  }
+  return arr
+}
 
-// let name
-// effect(() => {
-//   name = userInfo.name
-// })
+console.log(createArr(100))
 
-// let a = ref(5)
-// let b
+function createArr1(n) {
+  return Array.from({length:n},(item,i)=> i+1)
+}
 
-// effect(() => {
-//   b = a.value * 10
-// })
-// const p = new Proxy({
-//   a: 5
-// }, {
-//   set(obj, key, val) {
-//     obj[key] = val
-//     updateB(val) // 在 set 方法里执行 updateB 方法
-//   }
-// })
-// let b = p.a * 10
-
-// function updateB(val) {
-//   b = val * 10
-//   console.log(`b的值为：${b}`)
-// }
+console.log(createArr1(100))
 
 
+function createArr2(n) {
+  return Array.from(new Array(n + 1).keys()).slice(1)
+}
+
+console.log(createArr2(100))

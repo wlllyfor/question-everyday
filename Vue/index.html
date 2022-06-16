@@ -6,6 +6,54 @@
 </head>
 <body>
   <div id="app"></div>
-  <script src="proxy.js"></script>
+  <script>
+    let fn = null
+
+    function reactive(target) {
+
+      // 如果是原始类型数据，就直接返回。
+      if (typeof target !== 'object' || target == null) {
+        return target
+      }
+      return new Proxy(target, {
+        get(target, key) {
+          return reactive(target[key]) // 注意这里，递归调用自身。
+        },
+        set(target, key, val) {
+          target[key] = val
+          fn()
+          return true
+        },
+        deleteProperty(target, key) {
+          delete target[key]
+          fn()
+          return true
+        }
+      })
+    }
+
+    function effect(callback) {
+      fn = callback
+      callback()
+    }
+
+    let obj = reactive({
+      a: {
+        b: {
+          c: 'xxx'
+        }
+      },
+      arr: [
+        [1,2,3]
+      ]
+    })
+
+    effect(render)
+
+    function render() {
+      let app = document.getElementById('app')
+      app.innerHTML = JSON.stringify(obj) // 把数据渲染到页面中
+    }
+  </script>
 </body>
 </html>
