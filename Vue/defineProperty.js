@@ -1,0 +1,80 @@
+// 创建新数组原型，拷贝自 Array.prototype，这样再扩展新的方法就不会污染全局的 Array 原型
+const newArrayPrototype = [...Array.prototype]
+
+// 重写这 7 个会改变原数组的方法
+const arrayMethods = ['push', 'pop', 'shift', 'unshift', 'splice', 'sort', 'reverse']
+arrayMethods.forEach(methodName => {
+  newArrayPrototype[methodName] = function () {
+
+    // 执行原数组方法
+    Array.prototype[methodName].call(this, ...arguments) 
+
+    // 这一步是关键，执行完了原数组方法后，触发视图更新
+    render() 
+  }
+})
+
+function observer(target) {
+  if (typeof target !== 'object' || target === null) {
+    return target
+  }
+
+  // 如果是数组，就把新的数组原型设置给它
+  if (Array.isArray(target)) {
+    Object.setPrototypeOf(target, newArrayPrototype) // 等价于 target.__proto__ = newArrayPrototype
+  }
+
+  for (let key in target) {
+    defineReactive(target, key, target[key])
+  }
+}
+
+function defineReactive(target, key, val) {
+
+  observer(val)
+
+  Object.defineProperty(target, key, {
+    get() {
+      return val
+    },
+    set(newVal) {
+      if (newVal !== val) {
+        observer(newVal)
+        val = newVal
+        render()
+      }
+    }
+  })
+}
+
+// 处理新增属性
+function mySet(target, key, val) {
+
+  // 把新增的属性添加到监听的对象中
+  target[key] = val 
+
+  // 更新视图
+  render()
+}
+
+// 处理删除属性
+function myDelete(target, key) {
+
+  // 删除属性
+  delete target[key]
+
+  // 更新视图
+  render()
+}
+
+function render() {
+  let app = document.getElementById('app')
+  app.innerHTML = JSON.stringify(obj) 
+}
+
+const obj = {
+  name: 'xxx',
+  arr: [1,2,3]
+}
+observer(obj)
+render()
