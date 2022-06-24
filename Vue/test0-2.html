@@ -1,0 +1,23 @@
+<body>
+  <script src="https://unpkg.com/vue@next"></script>
+  <div id="app"></div>
+  <script>
+    const { reactive, effect } = Vue
+
+    const userInfo = reactive({
+      age: 18
+    })
+
+    effect(render)
+
+    function render() {
+      const app = document.querySelector('#app')
+      app.innerHTML = userInfo.age
+    }
+
+    setInterval(() => {
+      userInfo.age++
+    }, 1000)
+
+  </script>
+</body>

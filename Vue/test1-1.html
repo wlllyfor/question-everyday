@@ -1,0 +1,38 @@
+<body>
+  <div id="app"></div>
+  <script>
+    let fn = null
+
+    function reactive(obj) {
+      return new Proxy(obj, {
+        set(obj, key, val) { // 监听对象属性的修改。
+          obj[key] = val
+          fn()
+          return true
+        },
+        deleteProperty(obj, key) { // 监听对象属性的删除。
+          delete obj[key]
+          fn()
+          return true
+        }
+      })
+    }
+
+    function effect(callback) {
+      fn = callback
+      callback()
+    }
+
+    let userInfo = reactive({
+      name: 'lin',
+      age: 18
+    })
+
+    effect(render) // 把每次更新都会调用的 render 函数传入 effect 函数里。
+
+    function render() {
+      let app = document.getElementById('app')
+      app.innerHTML = JSON.stringify(userInfo) // 把数据渲染到页面中。
+    }
+  </script>
+</body>

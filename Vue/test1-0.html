@@ -1,0 +1,28 @@
+<body>
+  <div id="app"></div>
+</body>
+<script>
+
+function reactive(obj) {
+  return new Proxy(obj, {
+    set(obj, key, val) {
+      obj[key] = val
+      render() // set 被触发时执行这个函数。
+      return true
+    }
+  })
+}
+
+const obj = reactive({
+  name: 'xxx',
+  age: 18
+})
+
+function render() {
+  let app = document.getElementById('app')
+  app.innerHTML = JSON.stringify(obj) // 把数据渲染到页面中。
+}
+
+render()
+
+</script>

@@ -1,0 +1,49 @@
+<body></body>
+<script>
+const fnSet = new Set()
+
+function reactive(obj) {
+  return new Proxy(obj, {
+    get(obj, key) {
+      fnSet.add(activeEffect)
+      return obj[key]
+    },
+    set(obj, key, val) {
+      obj[key] = val
+      console.log('fnSet :>> ', fnSet);
+      fnSet.forEach(fn => fn())
+      return true
+    }
+  })
+}
+
+const obj = reactive({
+  name: 'xxx',
+  age: 18,
+  profession: 'student'
+})
+
+let activeEffect
+// 需要更新的函数以参数的形式传递到 effect 函数内。
+function effect(callback) {
+  activeEffect = callback // 在 effect 函数内部把需要更新的函数赋给 activeEffect。
+  callback() // 初始化时执行一次。
+}
+
+effect(fn1)
+effect(fn2)
+effect(fn3)
+
+function fn1() {
+  console.log('做第一件事 showName >>  ' + obj.name)
+}
+
+function fn2() {
+  console.log('做第二件事 showAge >>  ' + obj.age)
+}
+
+function fn3() {
+  console.log('做第三件事 showProfession >>  ' + obj.profession)
+}
+
+</script>

@@ -1,0 +1,23 @@
+<body></body>
+<script>
+const map = new Map()
+const weakMap = new WeakMap()
+
+
+function test(){
+  const obj1 = {
+    name: 'lin'
+  }
+  const obj2 = {
+    name: 'xxx'
+  }
+  map.set(obj1, 1)
+  weakMap.set(obj2, 2)
+}
+
+test()
+
+console.log('obj1 :>> ', [...map.keys()][0]); // 可以获取 obj1
+// 如何获取 obj2
+// 无法获取，WeakMap 的 key 是不可枚举的
+</script>

@@ -1,0 +1,36 @@
+<body>
+  <div id="app"></div>
+</body>
+<script>
+// 用一个全局变量 activeEffect 存储需要更新的函数（updateB、render、...）。
+let activeEffect
+
+function reactive(obj) {
+  return new Proxy(obj, {
+    set(obj, key, val) {
+      obj[key] = val
+      activeEffect() // set 被触发时执行这个函数。
+      return true
+    }
+  })
+}
+
+const obj = reactive({
+  name: 'xxx',
+  age: 18
+})
+
+// 需要更新的函数以参数的形式传递到 effect 函数内。
+function effect(callback) {
+  activeEffect = callback // 在 effect 函数内部把需要更新的函数赋给 activeEffect。
+  callback() // 初始化时执行一次。
+}
+
+effect(render)
+
+function render() {
+  let app = document.getElementById('app')
+  app.innerHTML = JSON.stringify(obj) // 把数据渲染到页面中。
+}
+
+</script>

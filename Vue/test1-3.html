@@ -1,0 +1,60 @@
+<body>
+  <div id="app"></div>
+  <script>
+    function observer(target) {
+      // 如果是原始类型数据，就直接返回
+      if (typeof target !== 'object' || target === null) {
+        return target
+      }
+
+      // Object.defineProperty 只能监听对象的属性
+      // 所以需要遍历对象属性，每一个属性都需要调用 defineReactive
+      for (let key in target) {
+        defineReactive(target, key, target[key])
+      }
+    }
+
+    function defineReactive(target, key, val) {
+
+      // 深度监听
+      observer(val)
+
+      // 核心 API
+      Object.defineProperty(target, key, {
+        // 监听到获取属性时，就返回属性的值
+        get() {
+          return val
+        },
+        // 监听修改属性
+        set(newVal) {
+          if (newVal !== val) {
+
+            // 深度监听
+            observer(newVal)
+
+            // 设置新值
+            val = newVal
+
+            // 更新视图
+            render()
+          }
+        }
+      })
+    }
+
+    // 更新视图方法
+    function render() {
+      let app = document.getElementById('app')
+      app.innerHTML = JSON.stringify(obj) // 把数据渲染到页面中
+    }
+
+    // 测试代码
+    const obj = {
+      name: 'lin',
+      arr: [1,2,3]
+    }
+    observer(obj)
+    render()
+    
+  </script>
+</body>
