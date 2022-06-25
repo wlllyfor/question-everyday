@@ -1,0 +1,21 @@
+<body>
+  <div id="app"></div>
+  <script>
+    // 数据 -> 视图
+    let userInfo = new Proxy({
+      name: 'xxx',
+      age: 18
+    }, {
+      set(obj, key, val) {
+        obj[key] = val
+        render()
+      }
+    })
+
+    function render() {
+      const app = document.querySelector('#app')
+      app.innerHTML = JSON.stringify(userInfo)
+    }
+    render()
+  </script>
+</body>

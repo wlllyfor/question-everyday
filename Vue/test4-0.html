@@ -80,28 +80,20 @@ function effect(fn) {
 }
 
 const obj = reactive({
-  name: 'xxx',
-  age: 18,
-  profession: 'student'
+  ok: true,
+  text: 'hello'
 })
 
-// const obj2 = reactive({
-//   count: 1
-// })
+effect(render)
 
-effect(render1)
-effect(render2)
-
-function render1() {
+function render() {
   console.log('执行 render1');
   let p1 = document.getElementById('p1')
-  p1.innerHTML = obj.name
+  p1.innerHTML = obj.ok ? obj.text: ''
+  console.log('targetMap :>> ', targetMap);
 }
 
-function render2() {
-  console.log('执行 render2');
-  let p2 = document.getElementById('p2')
-  p2.innerHTML = obj.age
-}
+
+
 
 </script>

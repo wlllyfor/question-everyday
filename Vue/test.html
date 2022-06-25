@@ -1,32 +1,18 @@
 <body>
+  <script src="https://unpkg.com/vue@next"></script>
   <div id="app"></div>
   <script>
-    let tempFn = null
-    function reactive(target) {
-      return new Proxy(target, {
-        set(obj, key, val){
-          obj[key] = val
-          tempFn()
-          return true
-        },
-      })
-    }
-
-    function effect(callback) {
-      tempFn = callback
-      callback()
-    }
+    const { reactive, effect } = Vue
 
     const userInfo = reactive({
-      name: 'xxx',
-      age: 18
+      name: 'xxx'
     })
 
     effect(render)
 
     function render() {
       const app = document.querySelector('#app')
-      app.innerHTML = JSON.stringify(userInfo)
+      app.innerHTML = userInfo.name
     }
 
   </script>

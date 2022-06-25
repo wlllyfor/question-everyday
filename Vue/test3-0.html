@@ -57,13 +57,13 @@ effect(render1)
 effect(render2)
 
 function render1() {
-  console.log('render1 :>> ');
+  console.log('执行 render1');
   let p1 = document.getElementById('p1')
   p1.innerHTML = JSON.stringify(obj1) // 把数据渲染到页面中。
 }
 
 function render2() {
-  console.log('render2 :>> ');
+  console.log('执行 render2');
   let p2 = document.getElementById('p2')
   p2.innerHTML = JSON.stringify(obj2) // 把数据渲染到页面中。
 }

@@ -1,0 +1,17 @@
+<body>
+  <script>
+    let p = new Proxy({
+      a: 5
+    }, {
+      set(obj, key, val) {
+        obj[key] = val
+        updateB()
+      }
+    })
+
+    function updateB() {
+      b = p.a * 10
+      console.log(b)
+    }
+  </script>
+</body>
