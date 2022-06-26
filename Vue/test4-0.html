@@ -49,10 +49,7 @@ function track(target, key) {
   if (!deps) {
     deps = new Set()
   }
-  if(typeof activeEffect === 'function') {
-    deps.add(activeEffect)
-    activeEffect = null
-  }
+  deps.add(activeEffect)
   depsMap.set(key, deps)
 }
 
@@ -81,7 +78,8 @@ function effect(fn) {
 
 const obj = reactive({
   ok: true,
-  text: 'hello'
+  text: 'hello',
+  name: 'xxx'
 })
 
 effect(render)
@@ -90,8 +88,11 @@ function render() {
   console.log('执行 render1');
   let p1 = document.getElementById('p1')
   p1.innerHTML = obj.ok ? obj.text: ''
-  console.log('targetMap :>> ', targetMap);
 }
+
+obj.ok = false
+
+obj.text = 111
 
 
 

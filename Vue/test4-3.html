@@ -22,21 +22,8 @@ function reactive(target) {
   return new Proxy(target, {
   // 拦截读取操作
   get(target, key) {
-    // 将副作用函数 activeEffect 添加到存储副作用函数的桶中
-    let depsMap = targetMap.get(target)
-    if (!depsMap) {
-      targetMap.set(target, (depsMap = new Map()))
-    }
-    let deps = depsMap.get(key)
-    if (!deps) {
-      deps = new Set()
-    }
-    if(typeof activeEffect === 'function') {
-      deps.add(activeEffect)
-      activeEffect = null
-    }
-    depsMap.set(key, deps)
-
+    // 收集依赖
+    track(target, key)
     // 返回属性值
     return target[key]
   },
@@ -45,28 +32,62 @@ function reactive(target) {
 
     // 设置属性值
     target[key] = newVal
-    // 把副作用函数从桶里取出并执行
-    const depsMap = targetMap.get(target)
-    if (!depsMap) {
-      return
-    }
-    let deps = depsMap.get(key)
-    if (!deps) {
-      return
-    }
-    deps.forEach(effect => effect())
+    // 执行依赖
+    trigger(target, key)
   }
 })
+}
+
+// 收集依赖
+function track(target, key) {
+  let depsMap = targetMap.get(target)
+  if (!depsMap) {
+    depsMap = new Map()
+    targetMap.set(target, depsMap)
+  }
+  let deps = depsMap.get(key)
+  if (!deps) {
+    deps = new Set()
+  }
+  deps.add(activeEffect)
+  activeEffect.deps.push(deps)
+  depsMap.set(key, deps)
+}
+
+// 执行依赖
+function trigger(target, key) {
+  const depsMap = targetMap.get(target)
+  if (!depsMap) {
+    return
+  }
+  let deps = depsMap.get(key)
+  if (!deps) {
+    return
+  }
+  const depsToRun = new Set(deps)
+  depsToRun.forEach(effectFn => {
+    effectFn()
+  })
 }
 
 
 // 用一个全局变量存储当前激活的 effect 函数
 let activeEffect
 function effect(fn) {
-  // 当调用 effect 注册副作用函数时，将副作用函数复制给 activeEffect
-  activeEffect = fn
-  // 执行副作用函数
-  fn()
+  const effectFn = () => {
+    cleanup(effectFn)
+    activeEffect = effectFn
+    fn()
+  }
+  effectFn.deps = []
+  effectFn()
+}
+
+function cleanup(effectFn) {
+  for (let i = 0; i < effectFn.deps.length; i++) {
+    effectFn.deps[i].delete(effectFn)
+  }
+  effectFn.deps.length = 0
 }
 
 const obj = reactive({
@@ -74,10 +95,6 @@ const obj = reactive({
   age: 18,
   profession: 'student'
 })
-
-// const obj2 = reactive({
-//   count: 1
-// })
 
 effect(render1)
 effect(render2)
@@ -94,6 +111,9 @@ function render2() {
   p2.innerHTML = obj.age
 }
 
-obj.age = 100
+obj.name = 23
+
+
+
 
 </script>

@@ -14,6 +14,8 @@
 //   }
 // }
 
+// const activeEffect = 
+
 // 存储副作用函数的桶
 const targetMap = new WeakMap()
 
@@ -50,6 +52,7 @@ function track(target, key) {
     deps = new Set()
   }
   deps.add(activeEffect)
+  activeEffect.deps.push(deps)
   depsMap.set(key, deps)
 }
 
@@ -63,40 +66,50 @@ function trigger(target, key) {
   if (!deps) {
     return
   }
-  deps.forEach(effect => effect())
+  const depsToRun = new Set(deps)
+  depsToRun.forEach(effectFn => {
+    effectFn()
+  })
 }
 
 
 // 用一个全局变量存储当前激活的 effect 函数
 let activeEffect
 function effect(fn) {
-  // 当调用 effect 注册副作用函数时，将副作用函数复制给 activeEffect
-  activeEffect = fn
-  // 执行副作用函数
-  fn()
+  const effectFn = () => {
+    cleanup(effectFn)
+    activeEffect = effectFn
+    fn()
+  }
+  effectFn.deps = []
+  effectFn()
+}
+
+function cleanup(effectFn) {
+  for (let i = 0; i < effectFn.deps.length; i++) {
+    effectFn.deps[i].delete(effectFn)
+  }
+  effectFn.deps.length = 0
 }
 
 const obj = reactive({
-  name: 'xxx',
-  age: 18,
-  profession: 'student'
+  ok: true,
+  text: 'hello',
+  name: 'xxx'
 })
 
-effect(render1)
-effect(render2)
+effect(render)
 
-function render1() {
+function render() {
   console.log('执行 render1');
   let p1 = document.getElementById('p1')
-  p1.innerHTML = obj.name
+  p1.innerHTML = obj.ok ? obj.text: ''
 }
 
-function render2() {
-  console.log('执行 render2');
-  let p2 = document.getElementById('p2')
-  p2.innerHTML = obj.age
-}
+obj.ok = false
+obj.text = 111
 
-obj.age = 23
+
+
 
 </script>

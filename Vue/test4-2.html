@@ -1,0 +1,30 @@
+<body>
+  <script>
+    // set 遍历的缺陷
+    // const set = new Set([1])
+    // // const newSet = new Set(set)
+
+    // let count = 1
+    // set.forEach(item => {
+    //   set.delete(1)
+    //   set.add(1)
+    //   count++
+    //   if (count > 100) {
+    //     throw new Error('死循环')
+    //   }
+    // })
+
+    const set = new Set([1])
+    const newSet = new Set(set)
+
+    let count = 1
+    newSet.forEach(item => {
+      set.delete(1)
+      set.add(1)
+      count++
+      if (count > 100) {
+        throw new Error('死循环')
+      }
+    })
+  </script>
+</body>
