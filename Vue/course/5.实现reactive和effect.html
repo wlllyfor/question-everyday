@@ -1,0 +1,44 @@
+<body>
+  <div id="app"></div>
+  <script>
+    // // 什么是副作用函数？
+    // function effect() {
+    //   document.body.innerHTML = 'hello world'
+    // }
+
+    // let count = 2
+
+    // function effect1() {
+    //   count = 3
+    // }
+    
+    let activeEffect
+    function reactive(target) {
+      return new Proxy(target, {
+        set(target, key, val) {
+          target[key] = val
+          activeEffect()
+          return true
+        }
+      })
+    }
+
+    function effect(fn) {
+      activeEffect = fn
+      // 初始化
+      fn()
+    }
+
+    const userInfo = reactive({
+      name: 'xxx',
+      age: 18
+    })
+
+    effect(render)
+
+    function render() {
+      const app = document.querySelector('#app')
+      app.innerHTML = JSON.stringify(userInfo)
+    }
+  </script>
+</body>

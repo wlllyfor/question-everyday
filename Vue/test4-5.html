@@ -17,6 +17,7 @@
 const targetMap = new WeakMap()
 
 let activeEffect
+let effectFnDeps = []
 
 // 对原始数据的代理
 function reactive(target) {
@@ -51,7 +52,8 @@ function track(target, key) {
     deps = new Set()
   }
   deps.add(activeEffect)
-  activeEffect.deps.push(deps)
+  effectFnDeps.push(deps)
+  // activeEffect.deps.push(deps)
   depsMap.set(key, deps)
 }
 
@@ -79,41 +81,55 @@ function effect(fn) {
     activeEffect = effectFn
     fn()
   }
-  effectFn.deps = []
+  effectFnDeps = []
   effectFn()
 }
 
 function cleanup(effectFn) {
-  for (let i = 0; i < effectFn.deps.length; i++) {
-    effectFn.deps[i].delete(effectFn)
+  for (let i = 0; i < effectFnDeps.length; i++) {
+    effectFnDeps[i].delete(effectFn)
   }
-  effectFn.deps.length = 0
+  effectFnDeps.length = 0
 }
+
+// const obj = reactive({
+//   name: 'xxx',
+//   age: 18,
+//   profession: 'student'
+// })
+
+// effect(render1)
+// effect(render2)
+
+// function render1() {
+//   console.log('执行 render1');
+//   let p1 = document.getElementById('p1')
+//   p1.innerHTML = obj.name
+// }
+
+// function render2() {
+//   console.log('执行 render2');
+//   let p2 = document.getElementById('p2')
+//   p2.innerHTML = obj.age
+// }
+
+// obj.name = 23
 
 const obj = reactive({
-  name: 'xxx',
-  age: 18,
-  profession: 'student'
+  ok: true,
+  text: 'hello',
+  name: 'xxx'
 })
 
-effect(render1)
-effect(render2)
+effect(render)
 
-function render1() {
+function render() {
   console.log('执行 render1');
   let p1 = document.getElementById('p1')
-  p1.innerHTML = obj.name
+  p1.innerHTML = obj.ok ? obj.text: ''
 }
 
-function render2() {
-  console.log('执行 render2');
-  let p2 = document.getElementById('p2')
-  p2.innerHTML = obj.age
-}
-
-obj.name = 23
-
-
-
+obj.ok = false
+obj.text = 111
 
 </script>

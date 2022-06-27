@@ -17,6 +17,7 @@
 const targetMap = new WeakMap()
 
 let activeEffect
+let effectFnDeps = []
 
 // 对原始数据的代理
 function reactive(target) {
@@ -51,7 +52,8 @@ function track(target, key) {
     deps = new Set()
   }
   deps.add(activeEffect)
-  activeEffect.deps.push(deps)
+  effectFnDeps.push(deps)
+  // activeEffect.deps.push(deps)
   depsMap.set(key, deps)
 }
 
@@ -65,7 +67,7 @@ function trigger(target, key) {
   if (!deps) {
     return
   }
-  const depsToRun = new Set(deps)
+  const depsToRun = new Set()
   depsToRun.forEach(effectFn => {
     effectFn()
   })
@@ -79,15 +81,15 @@ function effect(fn) {
     activeEffect = effectFn
     fn()
   }
-  effectFn.deps = []
+  effectFnDeps = []
   effectFn()
 }
 
 function cleanup(effectFn) {
-  for (let i = 0; i < effectFn.deps.length; i++) {
-    effectFn.deps[i].delete(effectFn)
+  for (let i = 0; i < effectFnDeps.length; i++) {
+    effectFnDeps[i].delete(effectFn)
   }
-  effectFn.deps.length = 0
+  effectFnDeps.length = 0
 }
 
 const obj = reactive({
@@ -96,8 +98,12 @@ const obj = reactive({
   profession: 'student'
 })
 
-effect(render1)
-effect(render2)
+effect(() => {
+  render1()
+  effect(() => {
+    render2()
+  }) 
+})
 
 function render1() {
   console.log('执行 render1');
@@ -111,9 +117,7 @@ function render2() {
   p2.innerHTML = obj.age
 }
 
-obj.name = 23
-
-
-
+// obj.name = 23
+obj.age = 20
 
 </script>
