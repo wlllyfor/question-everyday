@@ -1,0 +1,32 @@
+<body>
+  <script src="https://unpkg.com/vue@next"></script>
+  <div id="app"></div>
+  <script>
+    const { effect, reactive } = Vue
+
+    const userInfo = reactive({
+      name: 'xxx',
+      age: 18,
+      arr: [1,2,3],
+      obj: {
+        a: {
+          b: 1
+        }
+      }
+    })
+
+    effect(render)
+
+    function render() {
+      const app = document.querySelector('#app')
+      app.innerHTML = JSON.stringify(userInfo)
+    }
+
+    // 修改对象属性
+    // 新增对象属性
+    // 删除对象属性
+    // 监听数组方法
+    // 深度监听
+
+  </script>
+</body>
