@@ -181,6 +181,7 @@ re.test('batb') // true
 re.test('datd') // true
 re.test('batd') // false
 
+
 // 34. 在字符 '2022年月22日' 中插入月份
 
 const re = /(?=月)/
@@ -306,4 +307,57 @@ const re = /^[A-Z]:\\(.+\\?)*(\w+\.\w+)?$/
 const re = /^[A-Z]:\\([^\\:*?"<>|]+\\?)*(\w+\.\w+)?$/
 // const re = /^[A-Z]:\\(?:[^\\:*?"<>|]+\\?)*(?:\w+\.\w+)?$/
 
-// 45. Unix 风格文件路径
+// 45.匹配 id
+
+const str = `<div id="app" >
+  <p id="p1"></p>
+  <div id="div1"></div>
+</div>`
+
+// const re = /id=".+?"/g
+// const re = /id=".*"/g
+const re = /id="[^"]+"/g
+
+str.match(res)
+
+// 46.千分位分隔数字
+
+const re = /(?!^)(?=(\d{3})+$)/g
+
+const money = '10000000'
+
+money.replace(re, ',')
+
+// 47.千分位分隔数字（包含小数点）
+
+function formatMoney(money) {
+  const arr = money.split('.')
+  arr[0] = arr[0].replace(/(?!^)(?=(\d{3})+$)/g, ',')
+  return arr.join('.')
+}
+
+// 48.手机号 3-4-4 分割
+
+// 49.手机号 3-4-4 分割（输入过程中）
+
+// 50.验证密码
+
+// 51.实现 trim
+
+// 52.将每个单词的首字母转换为大写
+
+// 53.驼峰化
+
+// 54.中划线化
+
+// 55.匹配成对的标签
+
+// 56.身份证
+
+// 57.获取网页中所有 img 标签的图片地址
+
+// 58.英文和数字加前后空格
+
+// 59.判断版本号
+
+// 60.匹配 IP 地址
