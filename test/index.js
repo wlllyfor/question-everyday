@@ -1,78 +1,25 @@
-// 触发更新视图
-function updateView() {
-  console.log('视图更新')
-}
+const arr = [1,,,2,3]
+let fn = (pre, cur) => pre + cur;
+// [].reduce(fn)
+[1,2,3].reduce(1)
+// [1,2,3].reduce(fn,1)
+// myReduce([]) // 数组长度为 0 且没有初始值时，应该有异常提示。
+// myReduce([1,2,3], 1) // 传入的 callback 函数不是一个函数时，应该有异常提示。
 
-// 重新定义数组原型
-const oldArrayProperty = Array.prototype
-// 创建新对象，原型指向 oldArrayProperty ，再扩展新的方法不会影响原型
-const arrProto = Object.create(oldArrayProperty);
-['push', 'pop', 'shift', 'unshift', 'splice'].forEach(methodName => {
-  arrProto[methodName] = function () {
-      updateView() // 触发视图更新
-      oldArrayProperty[methodName].call(this, ...arguments)
-      // Array.prototype.push.call(this, ...arguments)
-  }
-})
+function myReduce(arr, callback, initValue) {
+  let hasInitValue = initValue !== undefined // 定义一个变量记录是否有初始值。
 
-// 重新定义属性，监听起来
-function defineReactive(target, key, value) {
-  // 深度监听
-  observer(value)
+  // 有初始值时，pre 初始值为初始值，否则为 arr[0]。
+  let pre = hasInitValue ? initValue : arr[0]
 
-  // 核心 API
-  Object.defineProperty(target, key, {
-      get() {
-          return value
-      },
-      set(newValue) {
-          if (newValue !== value) {
-              // 深度监听
-              observer(newValue)
+  // 有初始值时，cur 初始值为 arr[0]，否则为 arr[1]，这里先用一个变量 index 记录一下，后面在循环里用。
+  let index = hasInitValue ? 0 : 1
 
-              // 设置新值
-              // 注意，value 一直在闭包中，此处设置完之后，再 get 时也是会获取最新的值
-              value = newValue
-
-              // 触发更新视图
-              updateView()
-          }
-      }
-  })
-}
-
-// 监听对象属性
-function observer(target) {
-  if (typeof target !== 'object' || target === null) {
-      // 不是对象或数组
-      return target
+  // 循环时，i 的初始值为 index。
+  for (let i = index; i < arr.length; i++) {
+    let cur = arr[i]
+    pre = callback(pre, cur, i, arr) // 每调用一次 callback，就把返回值赋值给 pre。
   }
 
-  // 污染全局的 Array 原型
-  // Array.prototype.push = function () {
-  //     updateView()
-  //     ...
-  // }
-
-  if (Array.isArray(target)) {
-      target.__proto__ = arrProto
-  }
-
-  // 重新定义各个属性（for in 也可以遍历数组）
-  for (let key in target) {
-      defineReactive(target, key, target[key])
-  }
+  return pre
 }
-
-// 准备数据
-const userInfo = {
-  name: 'lin'
-}
-
-// 监听数据
-observer(userInfo)
-
-console.log(userInfo)
-
-
-
