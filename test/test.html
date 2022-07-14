@@ -1,0 +1,13 @@
+<body>
+  <script>
+    console.log(this === window) // true
+    'use strict'
+    console.log(this === window) // true
+    
+    this.userName = 'zhangsan'
+    window.age = 18
+
+    console.log(this.age) // 18
+    console.log(window.userName) // 'zhangsan'
+  </script>
+</body>
