@@ -1,23 +1,23 @@
 <body>
-  <input id="input" type="text" >
   <script>
-    const debounce = (fn, delay) => {
-      let timer = null
-      return function () {
-        if (timer) {
-          clearTimeout(timer)
-        }
-        timer = setTimeout(() => {
-          fn.apply(this, arguments)
-        }, delay)
-      }
-    }
+    const p1 = document.createElement('p')
+    p1.innerHTML = '11111'
+    const p2 = document.createElement('p')
+    p2.innerHTML = '22222'
+    const p3 = document.createElement('p')
+    p3.innerHTML = '33333'
 
-    const handleInput = (e) => {
-      console.log('do something', e)
-    }
+    document.body.append(p1)
+    document.body.append(p2)
+    document.body.append(p3)
 
-    const input = document.querySelector('#input')
-    input.oninput = debounce(handleInput, 500)
+    Promise.resolve().then(() => {
+      alert('微任务触发')
+    })
+
+    setTimeout(() => {
+      alert('宏任务触发')
+    })
+
   </script>
 </body>

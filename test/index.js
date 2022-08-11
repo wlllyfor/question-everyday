@@ -1,18 +1,20 @@
-// const p = new Promise((reslove, reject) => {
-
-// })
-
-// console.log(p) // Promise {<pending>}
-
-
-// const p = new Promise((reslove, reject) => {
-//   reslove(200)
-// })
-
-// console.log(p) // Promise {<fulfilled>: 200}
-
-const p = new Promise((reslove, reject) => {
-  reject('error')
+Promise.resolve().then(() => {
+  console.log(1);
+  return Promise.resolve();
+}).then(() => {
+  console.log(2)
 })
 
-console.log(p) // Promise {<rejected>: 'error'}
+Promise.resolve().then(() => {
+  console.log(3);
+}).then(() => {
+  console.log(4);
+}).then(() => {
+  console.log(5);
+}).then(() => {
+  console.log(6);
+}).then(() =>{
+  console.log(7);
+})
+
+// 1 3 4 5 2 6 7
