@@ -1,39 +1,39 @@
-// const PENDING = 'pending'
-// const FULFILLED = 'fulfilled'
-// const REJECTED = 'rejected'
+const PENDING = 'pending'
+const FULFILLED = 'fulfilled'
+const REJECTED = 'rejected'
 
-// class MyPromise {
-//   constructor(fn) {
-//     this.status = PENDING
-//     this.value = undefined
-//     this.reason = undefined
+class MyPromise {
+  constructor(fn) {
+    this.status = PENDING
+    this.value = undefined
+    this.reason = undefined
 
-//     const resloveHandler = (value) => {
-//       this.status = FULFILLED
-//       this.value = value
-//     }
+    const resloveHandler = (value) => {
+      this.status = FULFILLED
+      this.value = value
+    }
 
-//     const rejectHandler = (reason) => {
-//       this.status = REJECTED
-//       this.reason = reason
-//     }
-//     try {
-//       fn(resloveHandler, rejectHandler)
-//     } catch(err) {
-//       rejectHandler(err)
-//     }
-//   }
-// }
+    const rejectHandler = (reason) => {
+      this.status = REJECTED
+      this.reason = reason
+    }
+    try {
+      fn(resloveHandler, rejectHandler)
+    } catch(err) {
+      rejectHandler(err)
+    }
+  }
+}
 
 
-// const p = new MyPromise((resolve, reject) => {
-//   resolve(200)
-//   // setTimeout(() => {
-//   //   resolve(200)
-//   // }, 1000)
-// })
+const p = new MyPromise((resolve, reject) => {
+  resolve(200)
+  // setTimeout(() => {
+  //   resolve(200)
+  // }, 1000)
+})
 
-// console.log('p :>> ', p);
+console.log('p :>> ', p);
 
 
 
