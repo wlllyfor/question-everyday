@@ -1,102 +1,46 @@
-const PENDING = 'pending'
-const FULFILLED = 'fulfilled'
-const REJECTED = 'rejected'
-
-class MyPromise {
-  constructor(fn) {
-    this.status = PENDING
-    this.value = undefined
-    this.reason = undefined
-    this.resolveCallbacks = []
-    this.rejectCallbacks = []
-
-    const resolveHandler = (value) => {
-      this.status = FULFILLED
-      this.value = value
-      this.resolveCallbacks.forEach(fn => fn(this.value))
-    }
-
-    const rejectHandler = (reason) => {
-      this.status = REJECTED
-      this.reason = reason
-      this.rejectCallbacks.forEach(fn => fn(this.reason))
-    }
-    try {
-      fn(resolveHandler, rejectHandler)
-    } catch(err) {
-      rejectHandler(err)
-    }
-  }
-
-  then(onResolve, onReject) {
-    onResolve = typeof onResolve === 'function' ? onResolve : value => value
-    onReject = typeof onReject === 'function' ? onReject : error => error
-
-    if (this.status === PENDING) {
-      return new MyPromise((resolve, reject) => {
-        this.resolveCallbacks.push(() => {
-          try {
-            const newValue = onResolve(this.value)
-            resolve(newValue)
-          } catch(err) {
-            reject(err)
-          }
-        })
-
-        this.rejectCallbacks.push(() => {
-          try {
-            const newReason = onReject(this.reason)
-            reject(newReason)
-          } catch(err) {
-            reject(err)
-          }
-        })
-      })
-    }
-
-    if (this.status === FULFILLED) {
-      return new MyPromise((resolve, reject) => {
-        try {
-          const newValue = onResolve(this.value)
-          resolve(newValue)
-        } catch(err) {
-          reject(err)
-        }
-      })
-    }
-
-    if (this.status === REJECTED) {
-      return new MyPromise((resolve, reject) => {
-        try {
-          const newReason = onReject(this.reason)
-          reject(newReason)
-        } catch(err) {
-          reject(err)
-        }
-      })
-    }
-  }
-
-  catch(onReject) {
-    this.then(null, onReject)
-  }
+class Scheduler {
+	constructor(limit) {
+		// 当前执行异步函数数量
+		this.count = 0
+		// 暂存异步函数队列
+		this.taskList = []
+		// 最大可同步执行的异步函数数量
+		this.limit = limit
+	}
+	async add(promiseCreator) {
+		// 如果当前执行异步函数的数量 大于 最大可同步执行的异步函数数量
+		if (this.count >= this.limit) {
+			// 创建一个Promise 将resolve推进任务队列 —— 此时Promise的状态未pending 持续await
+			await new Promise(resolve => {
+				this.taskList.push(resolve)
+			})
+		}
+		// 当前执行的异步函数数量 +1
+		this.count++
+		// 等待异步任务的结束
+		await promiseCreator()
+		// 当前执行的异步函数数量 -1
+		this.count--
+		// 如果有等待的异步任务
+		if (this.taskList.length > 0) {
+			// 释放 taskList 中的 resolve 函数,解除上面的pending状态
+			this.taskList.shift()()
+		} 
+	}
 }
 
-const p = new MyPromise((resolve, reject) => {
-  reject('error')
+const timeout = time => new Promise(resolve => {
+  setTimeout(resolve, time);
 })
-
-console.log(p)
-
-p.then((data) => {
-  console.log(data)
-}).catch(err => {
-  console.log(err)
-})
-
-
-// const p = new Promise((resolve, reject) => {
-//   reject('error msg')
-// })
-
-// console.log(p)
+  
+const scheduler = new Scheduler(2);
+  
+const addTask = (time,order) => {
+  scheduler.add(() => timeout(time).then(()=>console.log(order)))
+}
+  
+  
+addTask(1000, '1');
+addTask(500, '2');
+addTask(300, '3');
+addTask(400, '4');
