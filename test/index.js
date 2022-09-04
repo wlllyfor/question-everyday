@@ -1,45 +1,62 @@
-class Scheduler {
-  constructor (limit) {
-    // 当前执行异步函数数量
-    this.count = 0
-    // 暂存异步函数队列
-    this.taskList = []
-    // 最大可同步执行的异步函数数量
-    this.limit = limit
-  }
-  async add (promiseCreator) {
-    // 如果当前执行异步函数的数量 大于 最大可同步执行的异步函数数量
-    if (this.count >= this.limit) {
-      // 创建一个Promise 将resolve推进任务队列 —— 此时Promise的状态未pending 持续await
-      await new Promise(resolve => {
-        this.taskList.push(resolve)
-      })
-    }
-    // 当前执行的异步函数数量 +1
-    this.count++
-    // 等待异步任务的结束
-    await promiseCreator()
-    // 当前执行的异步函数数量 -1
-    this.count--
-    // 如果有等待的异步任务
-    if (this.taskList.length > 0) {
-      // 释放 taskList 中的 resolve 函数,解除上面的pending状态
-      this.taskList.shift()()
-    }
-  }
+// function fn() {
+//   return myAsync(function* () {
+//     return 1
+//   });
+// }
+
+// function myAsync(genFn) {
+//   return new Promise(function(resolve, reject) {
+//     const gen = genFn();
+//     function step(nextFn) {
+//       let next;
+//       try {
+//         next = nextFn();
+//       } catch(e) {
+//         return reject(e);
+//       }
+//       if(next.done) {
+//         return resolve(next.value);
+//       }
+//       Promise.resolve(next.value).then(function(v) {
+//         step(function() { return gen.next(v); });
+//       }, function(e) {
+//         step(function() { return gen.throw(e); });
+//       });
+//     }
+//     step(function() { return gen.next(); });
+//   });
+// }
+
+// const p = fn()
+// p.then((val) => {
+//   console.log(val)
+// })
+
+// const fs = require('fs');
+
+// const readFile = function (fileName) {
+//   return new Promise(function (resolve, reject) {
+//     fs.readFile(fileName, function(error, data) {
+//       if (error) return reject(error);
+//       resolve(data);
+//     });
+//   });
+// };
+
+// const gen = function* () {
+//   const f1 = yield readFile('/xxx/a');
+//   const f2 = yield readFile('/xxx/b');
+//   console.log(f1.toString());
+//   console.log(f2.toString());
+// };
+
+function * printNum() {
+  yield 1
+  yield 2
+  return 3
 }
 
-const scheduler = new Scheduler(3)
-
-const addTask = (time, order) => {
-  scheduler.add(() => {
-    return new Promise(resolve => {
-      setTimeout(resolve, time)
-    })
-  }).then(() => console.log(order))
-}
-
-addTask(1000, '1')
-addTask(500, '2')
-addTask(300, '3')
-addTask(400, '4')
+fn = printNum()
+console.log(fn.next()) // {value: 1, done: false}
+console.log(fn.next()) // {value: 2, done: false}
+console.log(fn.next()) // {value: 3, done: true}
